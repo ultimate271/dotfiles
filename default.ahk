@@ -1,10 +1,12 @@
-#persistent
-SetCapsLockState, alwaysoff
+#Persistent
+SetCapsLockState, AlwaysOff
 
-#Capslock::
-If GetKeyState("CapsLock", "T") = 1
-    SetCapsLockState, AlwaysOff
-Else 
-    SetCapsLockState, AlwaysOn
+#Capslock::Capslock
 Return
 
+Capslock::
+	Send, {Esc}
+Return
+
++NumpadSub::_
+Return
