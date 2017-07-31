@@ -1,5 +1,7 @@
 source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
+"source $VIMRUNTIME/mswin.vim
+source ~/vimfiles/marvim/marvim.vim
+
 behave mswin
 
 set runtimepath^=~/vimfiles/ctrlp.vim
@@ -9,6 +11,7 @@ colors evening
 set textwidth=0 
 set wrapmargin=0
 
+set tabstop=4
 set relativenumber
 set number
 
