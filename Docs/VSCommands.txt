@@ -93,7 +93,7 @@ s     |                   |                   |                   |             
 d     |                   |                   | *down half scr*   |                   |                   | View Designer     |                   |                   |
 f     |                   |                   | Find all usages   | Find All in Sol   |                   | Find Results      |                   |                   |
 g     |                   |                   | Goto Definition   |                   |                   |                   |                   |                   |
-h     |                   |                   |                   |                   |                   |                   |                   |                   |
+h     |                   |                   |                   | Replace all in Sol|                   |                   |                   |                   |
 j     |                   |                   |                   |                   |                   |                   |                   |                   |
 k     |                   |                   |                   |                   |                   |                   |                   |                   |
 l     |                   |                   |                   |                   |                   |                   |                   |                   |
