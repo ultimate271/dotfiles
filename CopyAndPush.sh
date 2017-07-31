@@ -5,28 +5,40 @@
 VSSettingsFileName="CurrentSettings.vssettings"
 VimRCFileName="_vimrc"
 AHKFileName="default.ahk"
+VSSettingsSet=false
+VimRCSet=false
+AHKSet=false
 
 while getopts ":s:v:a:" opt; do
 	case $opt in
 		s)
 			VSSettingsDir=$OPTARG
+			VSSettingsSet=true
 			;;
 		v)
 			VimRCDir=$OPTARG
+			VimRCSet=true
 			;;
 		a)
 			AHKDir=$OPTARG
+			AHKSet=true
 	esac
 done
 
-cp "${VSSettingsDir}\\${VSSettingsFileName}" $VSSettingsFileName
-echo "${VSSettingsDir}\\${VSSettingsFileName} copied to $VSSettingsFileName"
+if $VSSettingsSet ; then
+	cp "${VSSettingsDir}\\${VSSettingsFileName}" $VSSettingsFileName
+	echo "${VSSettingsDir}\\${VSSettingsFileName} copied to $VSSettingsFileName"
+fi
 
-cp "${VimRCDir}\\${VimRCFileName}" $VimRCFileName
-echo "${VimRCDir}\\${VimRCFileName} copied to $VimRCFileName"
+if $VimRCSet ; then
+	cp "${VimRCDir}\\${VimRCFileName}" $VimRCFileName
+	echo "${VimRCDir}\\${VimRCFileName} copied to $VimRCFileName"
+fi
 
-cp "${AHKDir}\\${AHKFileName}" $AHKFileName
-echo "${AHKDir}\\${AHKFileName} copied to $AHKFileName"
+if $AHKSet ; then
+	cp "${AHKDir}\\${AHKFileName}" $AHKFileName
+	echo "${AHKDir}\\${AHKFileName} copied to $AHKFileName"
+fi
 
 MacAddress=(Getmac | grep - | awk '/\\Device/{ print $1 }')
 CurrentTime=(date "+%F %T")
