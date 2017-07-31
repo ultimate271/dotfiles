@@ -5,6 +5,7 @@ source $VIMRUNTIME/vimrc_example.vim
 behave mswin
 
 set runtimepath^=~/vimfiles/ctrlp.vim
+set runtimepath^=~/vimfiles/nerdtree
 
 colors slate
 
@@ -14,6 +15,8 @@ set wrapmargin=0
 set tabstop=4
 set relativenumber
 set number
+
+command NT NERDTree
 
 set diffexpr=MyDiff()
 function MyDiff()

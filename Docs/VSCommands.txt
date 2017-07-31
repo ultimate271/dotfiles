@@ -103,7 +103,7 @@ z     |                   |                   |                   |             
 x     |                   |                   |                   |                   |                   |                   |                   |                   |
 c     |                   |                   | Toggle Block      | Toggle All Blocks |                   | View Code         |                   |                   |
 v     |                   |                   | Format Document   |                   |                   |                   |                   |                   |
-b     |                   |                   |                   |                   |                   |                   |                   |                   |
+b     |                   |                   | Toggle Bookmark   |                   |                   | Bookmark Window   |                   |                   |
 n     |                   |                   |                   |                   |                   |                   |                   |                   |
 m     |                   |                   |                   |                   |                   |                   |                   |                   |
 ,     |                   |                   |                   |                   |                   |                   |                   |                   |
