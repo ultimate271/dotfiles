@@ -1,0 +1,113 @@
+Brett's Visual studio pimp my ride guide
+
+Useful visual studio extensions:
+--------------------------------------------------------------------------------
+VsVim: Vim emulator for visual studio
+Relative Line Numbers: Shows line numbers relative to cursor
+Keyboard Shortcut Exporter: Simply exports your keyboard shortcuts to a (poorly formated) xml file
+Trailing Whitespace Visuallizer: Shows trailing whitespace
+
+
+List of windows I use
+(for each window, I'm going to need a hotkey which at least opens the window, followed by whatever actions I use that are associated with that window)
+--------------------------------------------------------------------------------
+
+Right Pane
+********************
+Solution Explorer
+Team Explorer
+Properties
+
+Bottom Pane
+********************
+Output
+Error List
+Breakpoints
+Bookmarks
+	Toggle Bookmark
+	Goto Next
+	Goto Previous
+Find Symbol Results
+Find Results
+Source Control Explorer
+
+Left Pane
+********************
+Toolbox
+Server Explorer
+
+Center Pane
+********************
+Text
+
+Hotkeys
+--------------------------------------------------------------------------------
+
+By key
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      | Vim commands      | Vim Commands      | Do something      | Do something more | Open Window       |                   |                   |                   |
+------*-------------------*-------------------*-------------------*-------------------*-------------------*-------------------*-------------------*-------------------*
+      | Normal            | Shift             | Ctrl              | Ctrl + Shift      | Alt               | Alt + Shift       | Ctrl + Alt        | Ctrl + Alt + Shift|
+------*-------------------*-------------------*-------------------*-------------------*-------------------*-------------------*-------------------*-------------------*
+<esc> | Main Document     |                   |                   |                   |                   |                   |                   |                   |
+<f1>  |                   |                   |                   |                   |                   |                   |                   |                   |
+<f2>  |                   |                   |                   |                   |                   |                   |                   |                   |
+<f3>  |                   |                   |                   |                   |                   |                   |                   |                   |
+<f4>  |                   |                   |                   |                   |                   |                   |                   |                   |
+<f5>  | Debug             | Stop Debuggging   | Run               |                   |                   |                   |                   |                   |
+<f6>  | Build             |                   | Rebuild           |                   |                   |                   |                   |                   |
+<f7>  |                   |                   |                   |                   |                   |                   |                   |                   |
+<f8>  | Step Into         |                   |                   |                   |                   |                   |                   |                   |
+<f9>  | Toggle Breakpoint |                   |                   |                   |                   |                   |                   |                   |
+<f10> | Step Over         |                   |                   |                   |                   |                   |                   |                   |
+<f11> | Step Out          |                   |                   |                   |                   |                   |                   |                   |
+<f12> |                   |                   |                   |                   |                   |                   |                   |                   |
+`     |                   |                   |                   |                   |                   |                   |                   |                   |
+1     |                   |                   |                   |                   |                   |                   |                   |                   |
+2     |                   |                   |                   |                   |                   |                   |                   |                   |
+3     |                   |                   |                   |                   |                   |                   |                   |                   |
+4     |                   |                   |                   |                   |                   |                   |                   |                   |
+5     |                   |                   |                   |                   |                   |                   |                   |                   |
+6     |                   |                   |                   |                   |                   |                   |                   |                   |
+7     |                   |                   |                   |                   |                   |                   |                   |                   |
+8     |                   |                   |                   |                   |                   |                   |                   |                   |
+9     |                   |                   |                   |                   |                   |                   |                   |                   |
+0     |                   |                   |                   |                   |                   |                   |                   |                   |
+-     |                   |                   |                   |                   |                   |                   |                   |                   |
+=     |                   |                   |                   |                   |                   |                   |                   |                   |
+q     |                   |                   | Quick Search      |                   |                   |                   |                   |                   |
+w     |                   |                   | Close Tab         | Close all tabs    |                   |                   |                   |                   |
+e     |                   |                   | *elevate scr*     |                   |                   | Error List        |                   |                   |
+r     |                   |                   | *redo*            |                   |                   |                   |                   |                   |
+t     |                   |                   |                   |                   |                   | Team Explorer     | Team Explorer     |                   |
+y     |                   |                   | *yank screen*     |                   |                   |                   |                   |                   |
+u     |                   |                   | *up half scr*     |                   |                   |                   |                   |                   |
+i     |                   |                   | *jump forward*    |                   |                   |                   |                   |                   |
+o     |                   |                   | *jump back*       |                   |                   | Output            |                   |                   |
+p     |                   |                   |                   |                   |                   | Properties        |                   |                   |
+[     |                   |                   | *normal mode*     |                   |                   |                   |                   |                   |
+]     |                   |                   |                   |                   |                   |                   |                   |                   |
+a     |                   |                   |                   |                   |                   |                   |                   |                   |
+s     |                   |                   |                   |                   |                   | Solution Explorer | Solution Explorer |                   |
+d     |                   |                   | *down half scr*   |                   |                   | View Designer     |                   |                   |
+f     |                   |                   | Find all usages   | Find All in Sol   |                   | Find Results      |                   |                   |
+g     |                   |                   | Goto Definition   |                   |                   |                   |                   |                   |
+h     |                   |                   |                   |                   |                   |                   |                   |                   |
+j     |                   |                   |                   |                   |                   |                   |                   |                   |
+k     |                   |                   |                   |                   |                   |                   |                   |                   |
+l     |                   |                   |                   |                   |                   |                   |                   |                   |
+;     |                   |                   | Solution Search   |                   |                   |                   |                   |                   |
+'     |                   |                   |                   |                   |                   |                   |                   |                   |
+z     |                   |                   |                   |                   |                   |                   |                   |                   |
+x     |                   |                   |                   |                   |                   |                   |                   |                   |
+c     |                   |                   | Toggle Block      | Toggle All Blocks |                   | View Code         |                   |                   |
+v     |                   |                   | Format Document   |                   |                   |                   |                   |                   |
+b     |                   |                   |                   |                   |                   |                   |                   |                   |
+n     |                   |                   |                   |                   |                   |                   |                   |                   |
+m     |                   |                   |                   |                   |                   |                   |                   |                   |
+,     |                   |                   |                   |                   |                   |                   |                   |                   |
+.     |                   |                   |                   |                   |                   |                   |                   |                   |
+/     |                   |                   |                   |                   |                   |                   |                   |                   |
+      |                   |                   |                   |                   |                   |                   |                   |                   |
+
