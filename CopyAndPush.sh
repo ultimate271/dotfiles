@@ -26,18 +26,18 @@ while getopts ":s:v:a:" opt; do
 done
 
 if $VSSettingsSet ; then
-	cp "${VSSettingsDir}\\${VSSettingsFileName}" $VSSettingsFileName
-	echo "${VSSettingsDir}\\${VSSettingsFileName} copied to $VSSettingsFileName"
+	cp "${VSSettingsDir}/${VSSettingsFileName}" $VSSettingsFileName
+	echo "${VSSettingsDir}/${VSSettingsFileName} copied to $VSSettingsFileName"
 fi
 
 if $VimRCSet ; then
-	cp "${VimRCDir}\\${VimRCFileName}" $VimRCFileName
-	echo "${VimRCDir}\\${VimRCFileName} copied to $VimRCFileName"
+	cp "${VimRCDir}/${VimRCFileName}" $VimRCFileName
+	echo "${VimRCDir}/${VimRCFileName} copied to $VimRCFileName"
 fi
 
 if $AHKSet ; then
-	cp "${AHKDir}\\${AHKFileName}" $AHKFileName
-	echo "${AHKDir}\\${AHKFileName} copied to $AHKFileName"
+	cp "${AHKDir}/${AHKFileName}" $AHKFileName
+	echo "${AHKDir}/${AHKFileName} copied to $AHKFileName"
 fi
 
 #MacAddress=$(Getmac | grep '-' | awk '/\\Device/{ print $1 }')
