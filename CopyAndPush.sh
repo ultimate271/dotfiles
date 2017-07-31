@@ -40,8 +40,8 @@ if $AHKSet ; then
 	echo "${AHKDir}\\${AHKFileName} copied to $AHKFileName"
 fi
 
-MacAddress=(Getmac | grep - | awk '/\\Device/{ print $1 }')
-CurrentTime=(date "+%F %T")
+MacAddress=$(Getmac | grep '-' | awk '/\\Device/{ print $1 }')
+CurrentTime=$(date "+%F %T")
 git commit -am "From $MacAddress updated on $CurrentTime"
 git push origin master
 
