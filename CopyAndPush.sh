@@ -28,5 +28,8 @@ echo "${VimRCDir}\\${VimRCFileName} copied to $VimRCFileName"
 cp "${AHKDir}\\${AHKFileName}" $AHKFileName
 echo "${AHKDir}\\${AHKFileName} copied to $AHKFileName"
 
+MacAddress=(Getmac | grep - | awk '/\\Device/{ print $1 }')
+CurrentTime=(date "+%F %T")
+git commit -am "From $MacAddress updated on $CurrentTime"
 git push origin master
 
