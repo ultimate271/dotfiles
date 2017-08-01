@@ -4,6 +4,7 @@
 
 VSSettingsFileName="CurrentSettings.vssettings"
 VimRCFileName="_vimrc"
+GVimRCFileName="_gvimrc"
 AHKFileName="default.ahk"
 VSSettingsSet=false
 VimRCSet=false
@@ -35,6 +36,8 @@ fi
 if $VimRCSet ; then
 	cp "$VimRCFileName" "$VimRCDir"
 	echo "$VimRCFileName Copied to $VimRCDir"
+	cp "$GVimRCFileName" "$VimRCDir"
+	echo "$GVimRCFileName Copied to $VimRCDir"
 fi
 
 if $AHKSet ; then
