@@ -77,10 +77,10 @@ By key
 -     |                   |                   |                   |                   |                   |                   |                   |                   |
 =     |                   |                   |                   |                   |                   |                   |                   |                   |
 q     |                   |                   | Quick Search      |                   |                   |                   |                   |                   |
-w     |                   |                   | Close Tab         | Close all tabs    |                   |                   |                   |                   |
+w     |                   |                   | Close Tab         | Close all tabs    |                   | Watch +           |                   |                   |
 e     |                   |                   | *elevate scr*     |                   |                   | Error List        |                   |                   |
 r     |                   |                   | *redo*            |                   |                   |                   |                   |                   |
-t     |                   |                   |                   |                   |                   | Team Explorer     | Team Explorer     |                   |
+t     |                   |                   |                   |                   |                   | Team Explorer +   |                   |                   |
 y     |                   |                   | *yank screen*     |                   |                   |                   |                   |                   |
 u     |                   |                   | *up half scr*     |                   |                   |                   |                   |                   |
 i     |                   |                   | *jump forward*    |                   |                   |                   |                   |                   |
@@ -89,9 +89,9 @@ p     |                   |                   |                   |             
 [     |                   |                   | *normal mode*     |                   |                   |                   |                   |                   |
 ]     |                   |                   |                   |                   |                   |                   |                   |                   |
 a     |                   |                   |                   |                   |                   |                   |                   |                   |
-s     |                   |                   |                   |                   |                   | Solution Explorer | Solution Explorer |                   |
+s     |                   |                   |                   |                   |                   | Solution Explorer+|                   |                   |
 d     |                   |                   | *down half scr*   |                   |                   | View Designer     |                   |                   |
-f     |                   |                   | Find all usages   | Find All in Sol   |                   | Find Results      |                   |                   |
+f     |                   |                   | Find all usages   | Find All in Sol   |                   | Find Results +    |                   |                   |
 g     |                   |                   | Goto Definition   |                   |                   |                   |                   |                   |
 h     |                   |                   |                   | Replace all in Sol|                   |                   |                   |                   |
 j     |                   |                   |                   |                   |                   |                   |                   |                   |
