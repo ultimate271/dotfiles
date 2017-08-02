@@ -6,6 +6,7 @@ behave mswin
 
 set runtimepath^=~/vimfiles/ctrlp.vim
 set runtimepath^=~/vimfiles/nerdtree
+set runtimepath^=~/vimfiles/vim-vinegar
 
 colors slate
 
@@ -17,6 +18,11 @@ set relativenumber
 set number
 
 command NT NERDTree
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 set diffexpr=MyDiff()
 function MyDiff()
