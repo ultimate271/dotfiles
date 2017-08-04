@@ -87,12 +87,12 @@ i     |                   |                   | *jump forward*    |             
 o     |                   |                   | *jump back*       |                   |                   | Output            |                   |                   |
 p     |                   |                   |                   |                   |                   | Properties        |                   |                   |
 [     |                   |                   | *normal mode*     |                   |                   |                   |                   |                   |
-]     |                   |                   |                   |                   |                   |                   |                   |                   |
+]     |                   |                   | **                |                   |                   |                   |                   |                   |
 a     |                   |                   |                   |                   |                   |                   |                   |                   |
 s     |                   |                   |                   |                   |                   | Solution Explorer+|                   |                   |
 d     |                   |                   | *down half scr*   |                   |                   | View Designer     |                   |                   |
 f     |                   |                   | Find all usages   | Find All in Sol   |                   | Find Results +    |                   |                   |
-g     |                   |                   | Goto Definition   |                   |                   |                   |                   |                   |
+g     |                   |                   | **                |                   |                   |                   |                   |                   |
 h     |                   |                   |                   | Replace all in Sol|                   |                   |                   |                   |
 j     |                   |                   |                   |                   |                   |                   |                   |                   |
 k     |                   |                   |                   |                   |                   |                   |                   |                   |
