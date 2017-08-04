@@ -6,6 +6,7 @@ VSSettingsFileName="CurrentSettings.vssettings"
 VimRCFileName="_vimrc"
 GVimRCFileName="_gvimrc"
 AHKFileName="default.ahk"
+AHKExeName="startup.exe"
 VSSettingsSet=false
 VimRCSet=false
 AHKSet=false
@@ -43,4 +44,7 @@ fi
 if $AHKSet ; then
 	cp "$AHKFileName" "$AHKDir"
 	echo "$AHKFileName Copied to $AHKDir"
+	./compileahk.bat "$AHKFileName" "$AHKExeName"
+	cp "$AHKExeName" "$AHKDir"
+	echo "$AHKExeName Copied to $AHKDir"
 fi
