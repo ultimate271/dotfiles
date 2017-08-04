@@ -4,6 +4,10 @@ SetCapsLockState, AlwaysOff
 #Capslock::Capslock
 Return
 
+Capslock & 1::
+	Send, admin{Tab}alliant{Enter}
+Return
+
 Capslock::
 	Send, {Esc}
 Return
