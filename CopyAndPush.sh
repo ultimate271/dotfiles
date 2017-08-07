@@ -9,8 +9,9 @@ AHKFileName="default.ahk"
 VSSettingsSet=false
 VimRCSet=false
 AHKSet=false
+LinuxEnv=false
 
-while getopts ":s:v:a:" opt; do
+while getopts ":s:v:a:l" opt; do
 	case $opt in
 		s)
 			VSSettingsDir=$OPTARG
@@ -23,31 +24,51 @@ while getopts ":s:v:a:" opt; do
 		a)
 			AHKDir=$OPTARG
 			AHKSet=true
+			;;
+		l)
+			LinuxEnv=true
 	esac
 done
 
+VimRCDest="$VimRCDir/$VimRCFileName"
+GVimRCDest="$VimRCDir/$GVimRCFileName"
+VSSettingsDest="$VSSettingsDir/$VSSettingsFileName"
+AHKDest="$AHKDir/$AHKFileName"
+AHKExeDest="$AHKDir/$AHKExeName"
+
+if ($LinuxEnv) ; then
+	VimRCDest="$VimRCDir/.vimrc"
+	GVimRCDest="$VimRCDir/.gvimrc"
+fi
+
 if $VSSettingsSet ; then
-	cp "${VSSettingsDir}/${VSSettingsFileName}" $VSSettingsFileName
-	echo "${VSSettingsDir}/${VSSettingsFileName} copied to $VSSettingsFileName"
+	cp "$VSSettingsDest" $VSSettingsFileName
+	echo "$VSSettingsDest copied to $VSSettingsFileName"
 fi
 
 if $VimRCSet ; then
-	cp "${VimRCDir}/${VimRCFileName}" $VimRCFileName
-	echo "${VimRCDir}/${VimRCFileName} copied to $VimRCFileName"
-	cp "${VimRCDir}/${GVimRCFileName}" "${GVimRCFileName}"
-	echo "${VimRCDir}/${GVimRCFileName} Copied to $GVimRCFileName"
+	cp "$VimRCDest" $VimRCFileName
+	echo "$VimRCDest copied to $VimRCFileName"
+	cp "$GVimRCDest" "${GVimRCFileName}"
+	echo "$GVimRCDest Copied to $GVimRCFileName"
 fi
 
 if $AHKSet ; then
-	cp "${AHKDir}/${AHKFileName}" $AHKFileName
-	echo "${AHKDir}/${AHKFileName} copied to $AHKFileName"
+	cp "$AHKDest" $AHKFileName
+	echo "$AHKDest copied to $AHKFileName"
 fi
 
 #MacAddress=$(Getmac | grep '-' | awk '/\\Device/{ print $1 }')
 
-Username=$(env | grep "^USERNAME" | awk 'BEGIN { FS="=" } { print $2 }')
-Computername=$(env | grep "^COMPUTERNAME" | awk 'BEGIN { FS="=" } { print $2 }')
-CurrentTime=$(date "+%F %T")
+if ($LinuxEnv) ; then
+	Username=$(id -un)
+	Computername=$(hostname -f)
+	CurrentTime=$(date)
+else
+	Username=$(env | grep "^USERNAME" | awk 'BEGIN { FS="=" } { print $2 }')
+	Computername=$(env | grep "^COMPUTERNAME" | awk 'BEGIN { FS="=" } { print $2 }')
+	CurrentTime=$(date "+%F %T")
+fi
 git commit -am "From ${Username}@${Computername} updated on $CurrentTime"
 git push origin master
 

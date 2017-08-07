@@ -10,8 +10,9 @@ AHKExeName="startup.exe"
 VSSettingsSet=false
 VimRCSet=false
 AHKSet=false
+LinuxEnv=false
 
-while getopts ":s:v:a:" opt; do
+while getopts ":s:v:a:l" opt; do
 	case $opt in
 		s)
 			VSSettingsDir=$OPTARG
@@ -24,27 +25,41 @@ while getopts ":s:v:a:" opt; do
 		a)
 			AHKDir=$OPTARG
 			AHKSet=true
+			;;
+		l)
+			LinuxEnv=true
 	esac
 done
+
+VimRCDest="$VimRCDir/$VimRCFileName"
+GVimRCDest="$VimRCDir/$GVimRCFileName"
+VSSettingsDest="$VSSettingsDir/$VSSettingsFileName"
+AHKDest="$AHKDir/$AHKFileName"
+AHKExeDest="$AHKDir/$AHKExeName"
+
+if ($LinuxEnv) ; then
+	VimRCDest="$VimRCDir/.vimrc"
+	GVimRCDest="$VimRCDir/.gvimrc"
+fi
 
 git pull
 
 if $VSSettingsSet ; then
-	cp "$VSSettingsFileName" "$VSSettingsDir" 
-	echo "$VSSettingsFileName Copied to $VSSettingsDir"
+	cp "$VSSettingsFileName" "$VSSettingsDest" 
+	echo "$VSSettingsFileName Copied to $VSSettingsDest"
 fi
 
 if $VimRCSet ; then
-	cp "$VimRCFileName" "$VimRCDir"
-	echo "$VimRCFileName Copied to $VimRCDir"
-	cp "$GVimRCFileName" "$VimRCDir"
-	echo "$GVimRCFileName Copied to $VimRCDir"
+	cp "$VimRCFileName" "$VimRCDest"
+	echo "$VimRCFileName Copied to $VimRCDest"
+	cp "$GVimRCFileName" "$GVimRCDest"
+	echo "$GVimRCFileName Copied to $GVimRCDest"
 fi
 
 if $AHKSet ; then
-	cp "$AHKFileName" "$AHKDir"
-	echo "$AHKFileName Copied to $AHKDir"
+	cp "$AHKFileName" "$AHKDest"
+	echo "$AHKFileName Copied to $AHKDest"
 	./compileahk.bat "$AHKFileName" "$AHKExeName"
-	cp "$AHKExeName" "$AHKDir"
-	echo "$AHKExeName Copied to $AHKDir"
+	cp "$AHKExeName" "$AHKDest"
+	echo "$AHKExeName Copied to $AHKDest"
 fi

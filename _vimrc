@@ -4,6 +4,12 @@ source $VIMRUNTIME/vimrc_example.vim
 
 behave mswin
 
+"Linux Plugins
+set runtimepath^=~/.vimfiles/bundles/ctrlp.vim
+set runtimepath^=~/.vimfiles/bundles/nerdtree
+set runtimepath^=~/.vimfiles/bundles/vim-vinegar
+
+"Windows versions of plugins
 set runtimepath^=~/vimfiles/ctrlp.vim
 set runtimepath^=~/vimfiles/nerdtree
 set runtimepath^=~/vimfiles/vim-vinegar
