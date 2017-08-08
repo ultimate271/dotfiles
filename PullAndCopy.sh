@@ -60,6 +60,6 @@ if $AHKSet ; then
 	cp "$AHKFileName" "$AHKDest"
 	echo "$AHKFileName Copied to $AHKDest"
 	./compileahk.bat "$AHKFileName" "$AHKExeName"
-	cp "$AHKExeName" "$AHKDest"
-	echo "$AHKExeName Copied to $AHKDest"
+	cp "$AHKExeName" "$AHKExeDest"
+	echo "$AHKExeName Copied to $AHKExeDest"
 fi

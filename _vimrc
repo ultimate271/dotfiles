@@ -14,7 +14,7 @@ set runtimepath^=~/vimfiles/ctrlp.vim
 set runtimepath^=~/vimfiles/nerdtree
 set runtimepath^=~/vimfiles/vim-vinegar
 
-colors slate
+colorscheme jellybeans
 
 set textwidth=0 
 set wrapmargin=0
