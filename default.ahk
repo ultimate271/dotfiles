@@ -8,8 +8,8 @@ Capslock & 1::
 	Send, admin{Tab}alliant{Enter}
 Return
 
-Capslock::
-	Send, {Esc}
+Capslock & 2::
+	Send, {F5}{Tab 3}{Enter}
 Return
 
 +NumpadSub::_

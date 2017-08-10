@@ -11,8 +11,8 @@ set runtimepath^=~/.vimfiles/bundles/vim-vinegar
 
 "Windows versions of plugins
 set runtimepath^=~/vimfiles/ctrlp.vim
-set runtimepath^=~/vimfiles/nerdtree
 set runtimepath^=~/vimfiles/vim-vinegar
+set runtimepath^=~/vimfiles/colors
 
 colorscheme jellybeans
 
