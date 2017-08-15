@@ -16,10 +16,12 @@ set runtimepath^=~/vimfiles/colors
 
 colorscheme jellybeans
 
+syntax enable
 set textwidth=0 
 set wrapmargin=0
 
 set tabstop=4
+set shiftwidth=0
 set relativenumber
 set number
 

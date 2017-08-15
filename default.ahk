@@ -9,7 +9,7 @@ Capslock & 1::
 Return
 
 Capslock & 2::
-	Send, {F5}{Tab 3}{Enter}
+	Send, {F10}{Tab 18}{Enter}04032016{Tab}04092016{Tab 4}374949
 Return
 
 +NumpadSub::_
@@ -19,6 +19,6 @@ Return
 	Run, Explorer `,
 Return
 
-#e::
+#z::
 	Run, Explorer %USERPROFILE%
 Return
