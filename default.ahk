@@ -9,7 +9,7 @@ Capslock & 1::
 Return
 
 Capslock & 2::
-	Send, {F10}{Tab 18}{Enter}04032016{Tab}04092016{Tab 4}374949
+	Send, Alliant304{Tab}Alliant{Tab}sa{Tab}RouteLeader13{Enter 2}
 Return
 
 +NumpadSub::_
