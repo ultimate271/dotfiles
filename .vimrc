@@ -2,21 +2,20 @@ let mapleader = '\'
 map <space> <leader>
 set timeoutlen=4000
 
+if has('win32')
+	let $VIMHOME = $HOME."/vimfiles"
+else
+	let $VIMHOME = $HOME."/.vim"
+endif
 "Weird interaction with backspace, not sure what was going on but this fixes it.
 set backspace=indent,eol,start
-"Linux Plugins
-set runtimepath^=~/.vimfiles/bundles/ctrlp.vim
-set runtimepath^=~/.vimfiles/bundles/nerdtree
-set runtimepath^=~/.vimfiles/bundles/vim-vinegar
 
-"Windows versions of plugins
-set runtimepath^=~/vimfiles/ctrlp.vim
-set runtimepath^=~/vimfiles/vim-vinegar
-set runtimepath^=~/vimfiles/colors
-set runtimepath^=~/vimfiles/tabular
-set runtimepath^=~/vimfiles/vim-table-mode
+"plugins
+set rtp+=$VIMHOME/bundles/ctrlp.vim
+set rtp+=$VIMHOME/bundles/vim-vinegar
+set rtp+=$VIMHOME/bundles/tabular
+set backupdir=$VIMHOME/backup
 
-syntax enable
 set textwidth=0 
 set wrapmargin=0
 
@@ -32,4 +31,13 @@ nnoremap <C-l> <C-w>l
 
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>wv ZZ:source $MYVIMRC<cr>
-colorscheme bwebs
+nnoremap <leader>fw :set wrap!<cr>
+nnoremap <leader>-- 80i-<esc>
+nnoremap <leader>o o<esc>k
+nnoremap <leader>O O<esc>j
+syntax enable
+if filereadable(expand("$VIMHOME/colors/bdubcolor.vim"))
+	colorscheme bdubcolor
+else
+	colorscheme slate
+endif
