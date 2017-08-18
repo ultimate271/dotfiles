@@ -35,6 +35,7 @@ nnoremap <leader>fw :set wrap!<cr>
 nnoremap <leader>-- 80i-<esc>
 nnoremap <leader>o o<esc>k
 nnoremap <leader>O O<esc>j
+
 syntax enable
 if filereadable(expand("$VIMHOME/colors/bdubcolor.vim"))
 	colorscheme bdubcolor
