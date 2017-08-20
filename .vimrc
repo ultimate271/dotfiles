@@ -24,6 +24,10 @@ set shiftwidth=0
 set relativenumber
 set number
 
+set listchars=space:.
+set listchars^=eol:$
+set listchars^=tab:>-
+
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -35,6 +39,8 @@ nnoremap <leader>fw :set wrap!<cr>
 nnoremap <leader>-- 80i-<esc>
 nnoremap <leader>o o<esc>k
 nnoremap <leader>O O<esc>j
+nnoremap <leader>vw :set list!<cr>
+nnoremap <leader>f<space> :%s/	/    /g<cr>
 
 syntax enable
 if filereadable(expand("$VIMHOME/colors/bdubcolor.vim"))
