@@ -1,14 +1,17 @@
+"Fun stuff with the leader key
 let mapleader = '\'
 map <space> <leader>
 set timeoutlen=4000
 
+"Weird interaction with backspace, not sure what was going on but this fixes it.
+set backspace=indent,eol,start
+
+"Define where the vim bundles are for plugins
 if has('win32')
 	let $VIMHOME = $HOME."/vimfiles"
 else
 	let $VIMHOME = $HOME."/.vim"
 endif
-"Weird interaction with backspace, not sure what was going on but this fixes it.
-set backspace=indent,eol,start
 
 "plugins
 set rtp+=$VIMHOME/bundles/ctrlp.vim
@@ -16,13 +19,26 @@ set rtp+=$VIMHOME/bundles/vim-vinegar
 set rtp+=$VIMHOME/bundles/tabular
 set backupdir=$VIMHOME/backup
 
+"Line number goodness
+set relativenumber
+set number
+
+"Options to make the idotic automatic text wrapping go away
 set textwidth=0 
 set wrapmargin=0
 
+"
+set noexpandtab
+"Tabs and spaces
+augroup pythonsettings
+	autocmd!
+	autocmd FileType python setlocal expandtab
+augroup END
 set tabstop=4
-set shiftwidth=0
-set relativenumber
-set number
+set shiftwidth=4
+set softtabstop=4
+set copyindent
+set autoindent
 
 set listchars=space:.
 set listchars^=eol:$
