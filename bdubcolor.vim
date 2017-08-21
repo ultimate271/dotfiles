@@ -13,8 +13,7 @@ let g:colors_name = "bdubcolor"
 
 "hi IncSearch -- no settings --
 "hi WildMenu -- no settings --
-"hi Folded -- no settings --
-hi Folded guifg=#e8e8d3 guibg=#151515 guisp=#151515 gui=NONE ctermfg=116 ctermbg=234 cterm=NONE
+hi Folded guifg=#e8e8d3 guibg=#151515 guisp=#151515 gui=NONE ctermfg=188 ctermbg=234 cterm=NONE
 "hi CTagsMember -- no settings --
 "hi CTagsGlobalConstant -- no settings --
 "hi Ignore -- no settings --

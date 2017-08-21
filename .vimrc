@@ -27,14 +27,18 @@ set number
 set textwidth=0 
 set wrapmargin=0
 
+"Custom Folding Goodness
+set foldmethod=expr
+set foldexpr=MyFoldExpr(v:lnum)
+set foldtext=MyFoldText()
+set foldlevel=1
+
 "Prefer tabs over spaces
 "set noexpandtab
 "Tabs and spaces
 augroup pythonsettings
 	autocmd!
 	autocmd FileType python setlocal expandtab
-	autocmd FileType python setlocal foldmethod=indent
-	autocmd FileType python setlocal foldignore=
 augroup END
 set tabstop=4
 set shiftwidth=4
@@ -63,8 +67,52 @@ nnoremap <leader>-- 80i-<esc>
 nnoremap <leader>o o<esc>k
 nnoremap <leader>O O<esc>j
 nnoremap <leader>f<space> :%s/	/    /g<cr>
+"Folding
+nnoremap <C-c> za
 
 vnoremap = :Tab /=<cr>
+
+"Functions for folding
+function! IndentLevel(lnum)
+	return indent(a:lnum) / &shiftwidth
+endfunction
+
+function! NextNonBlankLine(lnum)
+	let numlines = line('$')
+	let current = a:lnum + 1
+	while current <= numlines
+		if getline(current) =~ '\v\S'
+			return current
+		endif
+		let current += 1
+	endwhile
+	
+	return -2
+endfunction
+
+function! MyFoldExpr(lnum)
+	let this_indent = IndentLevel(a:lnum) + 1
+	let next_indent = IndentLevel(NextNonBlankLine(a:lnum)) + 1
+
+	if getline(a:lnum) =~ '\v^\s*$'
+		if next_indent == 1
+			return '0'
+		else
+			return '-1'
+		endif
+	endif
+
+	if this_indent >= next_indent
+		return "".this_indent
+	elseif this_indent < next_indent
+		return ">".next_indent
+	endif
+endfunction
+
+function! MyFoldText()
+	let numlines = v:foldend - v:foldstart + 1
+	return getline(v:foldstart)." ".v:folddashes." [FOLDED] ".numlines." lines "
+endfunction
 
 syntax enable
 if filereadable(expand("$VIMHOME/colors/bdubcolor.vim"))
