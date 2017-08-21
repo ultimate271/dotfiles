@@ -14,6 +14,7 @@ let g:colors_name = "bdubcolor"
 "hi IncSearch -- no settings --
 "hi WildMenu -- no settings --
 "hi Folded -- no settings --
+hi Folded guifg=#e8e8d3 guibg=#151515 guisp=#151515 gui=NONE ctermfg=116 ctermbg=234 cterm=NONE
 "hi CTagsMember -- no settings --
 "hi CTagsGlobalConstant -- no settings --
 "hi Ignore -- no settings --
@@ -75,7 +76,7 @@ hi DiffDelete guifg=#220000 guibg=#220000 guisp=#220000 gui=NONE ctermfg=52 cter
 hi CursorColumn guifg=NONE guibg=#1c1c1c guisp=#1c1c1c gui=NONE ctermfg=NONE ctermbg=234 cterm=NONE
 hi Define guifg=#8fbfdc guibg=NONE guisp=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 hi Function guifg=#fad07a guibg=NONE guisp=NONE gui=NONE ctermfg=222 ctermbg=NONE cterm=NONE
-hi FoldColumn guifg=#a0a8b0 guibg=#384048 guisp=#384048 gui=NONE ctermfg=103 ctermbg=238 cterm=NONE
+hi FoldColumn guifg=#a0a8b0 guibg=#384048 guisp=#384048 gui=NONE ctermfg=103 ctermbg=235 cterm=NONE
 hi PreProc guifg=#8fbfdc guibg=NONE guisp=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
 hi Visual guifg=NONE guibg=#404040 guisp=#404040 gui=NONE ctermfg=NONE ctermbg=238 cterm=NONE
 hi VertSplit guifg=#181818 guibg=#181818 guisp=#181818 gui=NONE ctermfg=234 ctermbg=234 cterm=NONE

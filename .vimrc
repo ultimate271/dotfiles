@@ -27,12 +27,14 @@ set number
 set textwidth=0 
 set wrapmargin=0
 
-"
-set noexpandtab
+"Prefer tabs over spaces
+"set noexpandtab
 "Tabs and spaces
 augroup pythonsettings
 	autocmd!
 	autocmd FileType python setlocal expandtab
+	autocmd FileType python setlocal foldmethod=indent
+	autocmd FileType python setlocal foldignore=
 augroup END
 set tabstop=4
 set shiftwidth=4
@@ -44,19 +46,25 @@ set listchars=space:.
 set listchars^=eol:$
 set listchars^=tab:>-
 
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <silent> <C-h> :set nowrap<cr><C-w>h:vertical resize 80<cr>
+nnoremap <silent> <C-j> :set nowrap<cr><C-w>j:vertical resize 80<cr>
+nnoremap <silent> <C-k> :set nowrap<cr><C-w>k:vertical resize 80<cr>
+nnoremap <silent> <C-l> :set nowrap<cr><C-w>l:vertical resize 80<cr>
 
-nnoremap <leader>ev :split $MYVIMRC<cr>
+"Easily edit this file
+nnoremap <leader>ev :25split $MYVIMRC<cr>
 nnoremap <leader>wv ZZ:source $MYVIMRC<cr>
-nnoremap <leader>fw :set wrap!<cr>
+nnoremap <leader>ec :split $VIMHOME/colors/bdubcolor.vim<cr>
+"Viewing shortcuts
+nnoremap <leader>vw :set wrap!<cr>
+nnoremap <leader>vs :set list!<cr>
+"Insert Text
 nnoremap <leader>-- 80i-<esc>
 nnoremap <leader>o o<esc>k
 nnoremap <leader>O O<esc>j
-nnoremap <leader>vw :set list!<cr>
 nnoremap <leader>f<space> :%s/	/    /g<cr>
+
+vnoremap = :Tab /=<cr>
 
 syntax enable
 if filereadable(expand("$VIMHOME/colors/bdubcolor.vim"))
