@@ -50,10 +50,12 @@ set listchars=space:.
 set listchars^=eol:$
 set listchars^=tab:>-
 
-nnoremap <silent> <C-h> :set nowrap<cr><C-w>h:vertical resize 80<cr>
-nnoremap <silent> <C-j> :set nowrap<cr><C-w>j:vertical resize 80<cr>
-nnoremap <silent> <C-k> :set nowrap<cr><C-w>k:vertical resize 80<cr>
-nnoremap <silent> <C-l> :set nowrap<cr><C-w>l:vertical resize 80<cr>
+set winminheight=15
+set winminwidth=20
+nnoremap <silent> <C-h> :set nowrap<cr><C-w>h:vertical resize 88<cr>
+nnoremap <silent> <C-j> :set nowrap<cr><C-w>j:vertical resize 88<cr>
+nnoremap <silent> <C-k> :set nowrap<cr><C-w>k:vertical resize 88<cr>
+nnoremap <silent> <C-l> :set nowrap<cr><C-w>l:vertical resize 88<cr>
 
 "Easily edit this file
 nnoremap <leader>ev :25split $MYVIMRC<cr>
