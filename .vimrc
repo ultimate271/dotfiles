@@ -27,6 +27,13 @@ set number
 set textwidth=0 
 set wrapmargin=0
 
+"Scrolling goodness (winheight(win_getid())-x)/2 where x is the 'wiggle room'
+augroup VCenterCursor
+    au!
+    au BufEnter,WinEnter,WinNew,VimResized *,*.* 
+        \ let &scrolloff=(winheight(win_getid())-12)/2
+augroup END
+
 "Custom Folding Goodness
 set foldmethod=expr
 set foldexpr=MyFoldExpr(v:lnum)
@@ -50,15 +57,20 @@ set listchars^=tab:>-
 "Easily edit this file
 nnoremap <leader>ev :tabedit $MYVIMRC<cr>
 nnoremap <leader>wv ZZ:source $MYVIMRC<cr>
-nnoremap <leader>ec :split $VIMHOME/colors/bdubcolor.vim<cr>
+nnoremap <leader>ec :tabedit $VIMHOME/colors/bdubcolor.vim<cr>
 "Viewing shortcuts
 nnoremap <leader>vw :set wrap!<cr>
 nnoremap <leader>vs :set list!<cr>
+nnoremap <silent> <leader>vc :call ToggleCC(80)<cr>
+nnoremap <silent> <leader>vl :call ToggleCC("1,5,9,13,17,21,25")<cr>
 "Insert Text
 nnoremap <leader>-- 80i-<esc>
 nnoremap <leader>o o<esc>k
 nnoremap <leader>O O<esc>j
-nnoremap <leader>f<space> :%s/    /    /g<cr>
+nnoremap <leader>f<space> :%s/	/    /g<cr>
+"Put whats in the current buffer to the end of the file
+nnoremap <leader>p mr$p`r
+nnoremap <leader>P mrGp`r
 "Folding
 nnoremap <C-c> za
 "Tab Creation and Switching
@@ -66,6 +78,9 @@ nnoremap gh gT
 nnoremap gl gt
 nnoremap gt :tabedit .<cr>
 nnoremap gw :tabclose<cr>
+"Buffer Switching
+nnoremap <leader>h :bprevious<cr>
+nnoremap <leader>l :bnext<cr>
 "Easy Pane Navigation
 set winminwidth=20
 nnoremap <silent> <C-h> :set nowrap<cr><C-w>h:vertical resize 88<cr>
@@ -115,6 +130,14 @@ endfunction
 function! MyFoldText()
     let numlines = v:foldend - v:foldstart + 1
     return getline(v:foldstart)." ".v:folddashes." [FOLDED] ".numlines." lines "
+endfunction
+
+function! ToggleCC(colno)
+    if &colorcolumn != ""
+        set colorcolumn=
+    else
+        let &colorcolumn=a:colno
+    endif
 endfunction
 
 syntax enable
