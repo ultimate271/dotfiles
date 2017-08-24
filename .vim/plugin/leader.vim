@@ -7,7 +7,9 @@ set timeoutlen=4000
 nnoremap <leader>ev :tabedit $MYVIMRC<cr>
 nnoremap <leader>wv ZZ:source $MYVIMRC<cr>
 nnoremap <leader>ec :tabedit $VIMHOME/colors/bdubcolor.vim<cr>
+nnoremap <leader>wc ZZ:source $MYVIMRC<cr>
 nnoremap <leader>eh :tabedit $VIMHOME/plugin/leader.vim<cr>
+nnoremap <leader>wh ZZ:source $VIMHOME/plugin/leader.vim<cr>
 
 "Viewing shortcuts
 nnoremap <leader>vw :set wrap!<cr>
@@ -16,8 +18,10 @@ nnoremap <silent> <leader>vc :call ToggleCC(80)<cr>
 nnoremap <silent> <leader>vl :call ToggleCC("1,5,9,13,17,21,25")<cr>
 
 "Blackhole Register
-nnoremap <leader>d "_
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
 nnoremap c "_c
+vnoremap c "_c
 
 "Easily select clipboard register
 nnoremap <C-c> "*
@@ -36,6 +40,10 @@ nnoremap ' "
 vnoremap " '
 vnoremap ' "
 
+"Very magic searching
+nnoremap / /\v
+vnoremap / /\v
+
 "Tab Creation and Switching
 nnoremap gh gT
 nnoremap gl gt
@@ -51,6 +59,16 @@ nnoremap <silent> <C-l> :set nowrap<cr><C-w>l:vertical resize 88<cr>
 
 "Tabulate shortcut
 vnoremap = :Tab /=<cr>
+
+"Scalpel Remap
+nmap <Leader>s <Plug>(Scalpel)
+
+"Incremntal Search
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+let g:incsearch#magic = '\v'
+
 
 "Visual Mode Remaps
 vnoremap J j
@@ -74,3 +92,4 @@ vnoremap K k
     "<leader>h l = navigate buffers
     "<leader>p P = special pasting hotkeys
     "<leader>d = blackhole register
+    "<leader>s = invokes scalpel

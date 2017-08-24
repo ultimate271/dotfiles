@@ -17,6 +17,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-vinegar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'godlygeek/tabular'
+Plugin 'wincent/scalpel'
+Plugin 'haya14busa/incsearch.vim'
 call vundle#end()
 filetype plugin indent on
 set backupdir=$VIMHOME/backup
