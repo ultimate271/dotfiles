@@ -14,9 +14,19 @@ else
 endif
 
 "plugins
-set rtp+=$VIMHOME/bundles/ctrlp.vim
-set rtp+=$VIMHOME/bundles/vim-vinegar
-set rtp+=$VIMHOME/bundles/tabular
+set nocompatible
+filetype off
+set rtp+=$VIMHOME/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-vinegar'
+Plugin 'kien/ctrlp.vim'
+Plugin 'godlygeek/tabular'
+call vundle#end()
+filetype plugin indent on
+"set rtp+=$VIMHOME/bundle/ctrlp.vim
+"set rtp+=$VIMHOME/bundle/vim-vinegar
+"set rtp+=$VIMHOME/bundle/tabular
 set backupdir=$VIMHOME/backup
 
 "Line number goodness
