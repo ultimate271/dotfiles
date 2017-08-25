@@ -62,12 +62,14 @@ vnoremap = :Tab /=<cr>
 
 "Scalpel Remap
 nmap <Leader>s <Plug>(Scalpel)
+vmap <Leader>s <Plug>(ScalpelVisual)
 
 "Incremntal Search
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 let g:incsearch#magic = '\v'
+set hlsearch
 
 
 "Visual Mode Remaps
