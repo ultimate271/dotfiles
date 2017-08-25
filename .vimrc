@@ -1,3 +1,4 @@
+set encoding=utf-8
 "Weird interaction with backspace, not sure what was going on but this fixes it.
 set backspace=indent,eol,start
 
@@ -19,6 +20,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'wincent/scalpel'
 Plugin 'haya14busa/incsearch.vim'
+"Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 filetype plugin indent on
 set backupdir=$VIMHOME/backup

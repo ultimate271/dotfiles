@@ -70,6 +70,9 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 let g:incsearch#magic = '\v'
 set hlsearch
+set ignorecase
+set smartcase
+nnoremap <leader>n :noh<cr>
 
 
 "Visual Mode Remaps
@@ -95,3 +98,4 @@ vnoremap K k
     "<leader>p P = special pasting hotkeys
     "<leader>d = blackhole register
     "<leader>s = invokes scalpel
+    "<leader>n = remove search highlighting
