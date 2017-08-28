@@ -75,7 +75,9 @@ set smartcase
 nnoremap <leader>n :noh<cr>
 
 
-"Visual Mode Remaps
+"Convienience mappings
+nnoremap H ^
+nnoremap L $
 vnoremap J j
 vnoremap K k
 

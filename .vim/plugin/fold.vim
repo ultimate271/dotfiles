@@ -2,7 +2,8 @@
 set foldmethod=expr
 set foldexpr=MyFoldExpr(v:lnum)
 set foldtext=MyFoldText()
-set foldlevel=1
+set nofoldenable
+"set foldlevel=1
 
 "Folding
 nnoremap <C-z> za
