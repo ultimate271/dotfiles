@@ -49,6 +49,8 @@ nnoremap gh gT
 nnoremap gl gt
 nnoremap gt :tabedit .<cr>
 nnoremap gw :tabclose<cr>
+nnoremap <leader>h :bnext<cr>
+nnoremap <leader>l :bprevious<cr>
 
 "Easy Pane Navigation
 set winminwidth=20
