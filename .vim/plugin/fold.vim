@@ -50,5 +50,8 @@ endfunction
 "Function that makes folded text look better
 function! MyFoldText()
     let numlines = v:foldend - v:foldstart + 1
-    return getline(v:foldstart)." ".v:folddashes." [FOLDED] ".numlines." lines "
+    let foldtext = v:folddashes." [FOLDED] ".numlines." lines ".v:folddashes."    "
+    let linetext = strpart(getline(v:foldstart), 0, &columns - strlen(foldtext))
+    let padding = repeat(" ", &columns - strlen(linetext) - strlen(foldtext))
+    return "".linetext.padding.foldtext
 endfunction

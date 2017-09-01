@@ -1,6 +1,4 @@
 set encoding=utf-8
-"Weird interaction with backspace, not sure what was going on but this fixes it.
-set backspace=indent,eol,start
 
 "Define where the vim bundles are for plugins
 if has('win32')
@@ -9,7 +7,7 @@ else
     let $VIMHOME = $HOME."/.vim"
 endif
 
-"plugins
+"Plugins
 set nocompatible
 filetype off
 set rtp+=$VIMHOME/bundle/Vundle.vim
@@ -29,9 +27,11 @@ set backupdir=$VIMHOME/backup
 set relativenumber
 set number
 
-"Options to make the idotic automatic text wrapping go away
+"Stuff that makes vim usable
+set backspace=indent,eol,start
 set textwidth=0 
 set wrapmargin=0
+set hidden
 
 "Scrolling goodness (winheight(win_getid())-x)/2 where x is the 'wiggle room'
 augroup VCenterCursor

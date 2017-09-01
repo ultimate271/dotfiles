@@ -4,12 +4,18 @@ SetCapsLockState, AlwaysOff
 #Capslock::Capslock
 Return
 
-Capslock & 1::
+Capslock::Backspace
+Return
+
+Backspace::
+Return
+
+Backspace & =::
 	Send, admin{Tab}alliant{Enter}
 Return
 
-Capslock & 2::
-	Send, Alliant304{Tab}Alliant{Tab}sa{Tab}RouteLeader13{Enter 2}
+Backspace & -::
+	Send, {F8}!m100!f
 Return
 
 +NumpadSub::_

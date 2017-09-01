@@ -65,6 +65,7 @@ vnoremap = :Tab /=<cr>
 "Scalpel Remap
 nmap <Leader>s <Plug>(Scalpel)
 vmap <Leader>s <Plug>(ScalpelVisual)
+nnoremap <silent> <leader>n :noh<cr>
 
 "Incremntal Search
 map /  <Plug>(incsearch-forward)
