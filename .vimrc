@@ -18,6 +18,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'wincent/scalpel'
 Plugin 'haya14busa/incsearch.vim'
+Plugin 'vim-scripts/folddigest.vim'
+
 "Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 filetype plugin indent on
@@ -32,6 +34,8 @@ set backspace=indent,eol,start
 set textwidth=0 
 set wrapmargin=0
 set hidden
+set visualbell
+set t_vb=
 
 "Scrolling goodness (winheight(win_getid())-x)/2 where x is the 'wiggle room'
 augroup VCenterCursor

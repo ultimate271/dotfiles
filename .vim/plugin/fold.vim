@@ -1,6 +1,6 @@
 "Custom Folding Goodness
 set foldmethod=expr
-set foldexpr=MyFoldExpr(v:lnum)
+set foldexpr=TabLevelFoldExp(v:lnum)
 set foldtext=MyFoldText()
 set nofoldenable
 "set foldlevel=1
@@ -28,7 +28,7 @@ function! NextNonBlankLine(lnum)
 endfunction
 
 "The foldexpr generator itself
-function! MyFoldExpr(lnum)
+function! TabLevelFoldExp(lnum)
     let this_indent = IndentLevel(a:lnum) + 1
     let next_indent = IndentLevel(NextNonBlankLine(a:lnum)) + 1
 
@@ -44,6 +44,35 @@ function! MyFoldExpr(lnum)
         return "".this_indent
     elseif this_indent < next_indent
         return ">".next_indent
+    endif
+endfunction
+
+"Returns the fold level of a line based upon which delimiter is above it
+function! FoldScanUp(lnum)
+    let current = a:lnum - 1
+    while current > 0
+        if getline(current) =~ '\v^--'
+            return 1
+        elseif getline(current) =~ '\v\*\*\*'
+            return 2
+        endif
+        let current -= 1
+    endwhile
+    return 1
+endfunction
+
+"Foldexpr for txt files
+function! TxtFoldExp(lnum)
+    if getline(a:lnum + 1) =~ '\v^--'
+        return '>1'
+    elseif getline(a:lnum) =~ '\v^--'
+        return '1'
+    elseif getline(a:lnum) =~ '\v\*\*\*'
+        return '>2'
+    elseif getline(a:lnum) =~ '\v^$'
+        return '<'.(FoldScanUp(a:lnum) + 1)
+    else
+        return FoldScanUp(a:lnum) + 1
     endif
 endfunction
 
