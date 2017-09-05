@@ -19,7 +19,6 @@ Plugin 'godlygeek/tabular'
 Plugin 'wincent/scalpel'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'vim-scripts/folddigest.vim'
-
 "Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 filetype plugin indent on

@@ -51,9 +51,9 @@ endfunction
 function! FoldScanUp(lnum)
     let current = a:lnum - 1
     while current > 0
-        if getline(current) =~ '\v^--'
+        if strpart(getline(current), 0, 3) == '---'
             return 1
-        elseif getline(current) =~ '\v\*\*\*'
+        elseif strpart(getline(current), 0, 3) == '***'
             return 2
         endif
         let current -= 1
@@ -63,11 +63,11 @@ endfunction
 
 "Foldexpr for txt files
 function! TxtFoldExp(lnum)
-    if getline(a:lnum + 1) =~ '\v^--'
+    if strpart(getline(a:lnum + 1), 0, 3) == '---'
         return '>1'
-    elseif getline(a:lnum) =~ '\v^--'
+    elseif strpart(getline(a:lnum), 0, 3) == '---'
         return '1'
-    elseif getline(a:lnum) =~ '\v\*\*\*'
+    elseif strpart(getline(a:lnum), 0, 3) == '***'
         return '>2'
     elseif getline(a:lnum) =~ '\v^$'
         return '<'.(FoldScanUp(a:lnum) + 1)
