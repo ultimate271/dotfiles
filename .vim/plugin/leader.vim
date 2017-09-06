@@ -30,6 +30,7 @@ inoremap <C-c> <C-r>*
 
 "Insert Text
 inoremap --- <esc>80i-<esc>A
+inoremap === <esc>80i=<esc>A
 nnoremap <leader>f<space> :%s/	/    /g<cr>
 nnoremap <leader>p mr$p`r
 nnoremap <leader>P mrGp`r

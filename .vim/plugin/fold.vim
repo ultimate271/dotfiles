@@ -47,33 +47,34 @@ function! TabLevelFoldExp(lnum)
     endif
 endfunction
 
-"Returns the fold level of a line based upon which delimiter is above it
-function! FoldScanUp(lnum)
-    let current = a:lnum - 1
-    while current > 0
-        if strpart(getline(current), 0, 3) == '---'
-            return 1
-        elseif strpart(getline(current), 0, 3) == '***'
-            return 2
-        endif
-        let current -= 1
-    endwhile
-    return 1
-endfunction
-
 "Foldexpr for txt files
 function! TxtFoldExp(lnum)
-    if strpart(getline(a:lnum + 1), 0, 3) == '---'
+    let pline = getline(a:lnum - 1)
+    let cline = getline(a:lnum)
+    let nline = getline(a:lnum + 1)
+    if nline =~ '\v^\=+$' || cline =~ '\v^#[^#]+'
         return '>1'
-    elseif strpart(getline(a:lnum), 0, 3) == '---'
-        return '1'
-    elseif strpart(getline(a:lnum), 0, 3) == '***'
+    elseif nline =~ '\v^-+$' || cline =~ '\v##[^#]+'
         return '>2'
-    elseif getline(a:lnum) =~ '\v^$'
-        return '<'.(FoldScanUp(a:lnum) + 1)
+    elseif strlen(pline) == 0 && strlen(cline) != 0
+        return '>3'
     else
-        return FoldScanUp(a:lnum) + 1
+        return '='
     endif
+endfunction
+
+"Foldtext for markdown files
+function! FoldTextMarkdown()
+    let numlines = v:foldend - v:foldstart + 1
+    let fl = strlen(v:folddashes)
+    let foldtext = v:folddashes." [FOLDED] ".numlines." lines ".v:folddashes."    "
+    let linetext = strpart(getline(v:foldstart), 0, &columns - strlen(foldtext))
+    let prefix = ""
+    if (getline(v:foldstart)[0] != '#' && fl < 3)
+        let prefix = repeat("#", fl)
+    endif
+    let padding = repeat(" ", &columns - strlen(linetext) - strlen(foldtext))
+    return "".prefix.linetext.padding.foldtext
 endfunction
 
 "Function that makes folded text look better
