@@ -40,3 +40,4 @@ function! FoldTextMarkdown()
     let padding = repeat(" ", &columns - strlen(linetext) - strlen(foldtext))
     return "".prefix.linetext.padding.foldtext
 endfunction
+

@@ -19,10 +19,14 @@ Plugin 'godlygeek/tabular'
 Plugin 'wincent/scalpel'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'vim-scripts/folddigest.vim'
+Plugin 'scrooloose/nerdtree'
 "Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 filetype plugin indent on
 set backupdir=$VIMHOME/backup
+
+"ctrlp options
+let g:ctrlp_show_hidden = 1
 
 "Line number goodness
 set relativenumber
@@ -50,12 +54,25 @@ set shiftwidth=4
 set softtabstop=4
 set copyindent
 set autoindent
+set list
+set listchars=trail:◆
 
 "What to toggle to see whitespace
-set listchars=space:.
-set listchars^=eol:$
-set listchars^=tab:>-
+function! ToggleListChars()
+    if exists("g:showwhite")
+        unlet g:showwhite
+        set listchars-=space:.
+        set listchars-=eol:$
+        set listchars-=tab:>-
+    else
+        let g:showwhite = 1
+        set listchars^=space:.
+        set listchars^=eol:$
+        set listchars^=tab:>-
+    endif
+endfunction
 
+"Self explanatory
 function! ToggleCC(colno)
     if &colorcolumn != ""
         set colorcolumn=

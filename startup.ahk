@@ -10,21 +10,24 @@ Return
 Backspace::
 Return
 
-Backspace & =::
+RShift::Esc
+Return
+
+Backspace & ]::
 	Send, admin{Tab}alliant{Enter}
 Return
 
-Backspace & -::
-	Send, {F8}!m100!f
+Backspace & [::
+	Send, {F2}{Tab 3}943520{Tab}52720{Enter}!i
 Return
 
 +NumpadSub::_
 Return
 
-#c::
+#j::
 	Run, Explorer `,
 Return
 
-#z::
+#q::
 	Run, Explorer %USERPROFILE%
 Return

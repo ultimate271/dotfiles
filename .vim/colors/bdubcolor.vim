@@ -108,6 +108,6 @@ hi   TabLineSel                 guifg=#b8b8a3   guibg=#404040   guisp=#f0f0f0   
 hi   TabLineFill                guifg=#b8b8a3   guibg=#252525   guisp=NONE      gui=NONE   ctermfg=247    ctermbg=232    cterm=NONE
 hi   TabLine                    guifg=#b8b8a3   guibg=#303030   guisp=#b0b8c0   gui=NONE   ctermfg=245    ctermbg=234    cterm=NONE
 hi   ColorColumn                guifg=NONE      guibg=#303030   guisp=#b0b8c0   gui=NONE   ctermfg=NONE   ctermbg=234    cterm=NONE
-hi   Folded                     guifg=#98b8b8   guibg=#151818   guisp=#151515   gui=NONE   ctermfg=187    ctermbg=235    cterm=NONE
+hi   Folded                     guifg=#98b8b8   guibg=#152525   guisp=#151515   gui=NONE   ctermfg=187    ctermbg=235    cterm=NONE
 hi   Normal                     guifg=#b8b8a3   guibg=#151515   guisp=#151515   gui=NONE   ctermfg=187    ctermbg=233    cterm=NONE
 hi   Search                     guifg=NONE      guibg=#505050   guisp=NONE      gui=bold   ctermfg=NONE   ctermbg=240    cterm=bold

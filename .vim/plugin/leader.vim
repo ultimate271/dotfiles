@@ -13,7 +13,7 @@ nnoremap <leader>wh ZZ:source $VIMHOME/plugin/leader.vim<cr>
 
 "Viewing shortcuts
 nnoremap <leader>vw :set wrap!<cr>
-nnoremap <leader>vs :set list!<cr>
+nnoremap <leader>vs :call ToggleListChars()<cr>
 nnoremap <silent> <leader>vc :call ToggleCC(80)<cr>
 nnoremap <silent> <leader>vl :call ToggleCC("1,5,9,13,17,21,25")<cr>
 
