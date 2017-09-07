@@ -29,15 +29,11 @@ endfunction
 
 "Foldtext for markdown files
 function! FoldTextMarkdown()
-    let numlines = v:foldend - v:foldstart + 1
     let fl = strlen(v:folddashes)
-    let foldtext = v:folddashes." [FOLDED] ".numlines." lines ".v:folddashes."    "
-    let linetext = strpart(getline(v:foldstart), 0, &columns - strlen(foldtext))
     let prefix = ""
     if (getline(v:foldstart)[0] != '#' && fl < 3)
         let prefix = repeat("#", fl)
     endif
-    let padding = repeat(" ", &columns - strlen(linetext) - strlen(foldtext))
-    return "".prefix.linetext.padding.foldtext
+    return "".prefix.MyFoldText()
 endfunction
 

@@ -10,12 +10,13 @@ nnoremap <leader>ec :tabedit $VIMHOME/colors/bdubcolor.vim<cr>
 nnoremap <leader>wc ZZ:source $MYVIMRC<cr>
 nnoremap <leader>eh :tabedit $VIMHOME/plugin/leader.vim<cr>
 nnoremap <leader>wh ZZ:source $VIMHOME/plugin/leader.vim<cr>
+nnoremap <silent> <leader>ww :w<cr>:source %<cr>
 
 "Viewing shortcuts
 nnoremap <leader>vw :set wrap!<cr>
-nnoremap <leader>vs :call ToggleListChars()<cr>
-nnoremap <silent> <leader>vc :call ToggleCC(80)<cr>
-nnoremap <silent> <leader>vl :call ToggleCC("1,5,9,13,17,21,25")<cr>
+nnoremap <silent> <leader>vs :call ToggleListChars()<cr>
+nnoremap <silent> <leader>vc :call ToggleCC(range(81,255))<cr>
+nnoremap <silent> <leader>vl :call ToggleCC([1,5,9,13,17,21,25])<cr>
 
 "Blackhole Register
 nnoremap <leader>d "_d

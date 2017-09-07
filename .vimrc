@@ -34,11 +34,12 @@ set number
 
 "Stuff that makes vim usable
 set backspace=indent,eol,start
-set textwidth=0 
+set textwidth=0
 set wrapmargin=0
 set hidden
 set visualbell
 set t_vb=
+set shortmess^=I
 
 "Scrolling goodness (winheight(win_getid())-x)/2 where x is the 'wiggle room'
 augroup VCenterCursor
@@ -72,14 +73,20 @@ function! ToggleListChars()
     endif
 endfunction
 
-"Self explanatory
-function! ToggleCC(colno)
-    if &colorcolumn != ""
-        set colorcolumn=
-    else
-        let &colorcolumn=a:colno
-    endif
+"Toggle Color Column
+function! ToggleCC(collist)
+    let cclist = split(&colorcolumn, ",")
+    for i in a:collist
+        if index(cclist, "".i) == -1
+            execute "set colorcolumn^=".i
+        else
+            execute "set colorcolumn-=".i
+        endif
+    endfor
 endfunction
+
+"Visually see 80 lines
+call ToggleCC(range(81,255))
 
 syntax enable
 if filereadable(expand("$VIMHOME/colors/bdubcolor.vim"))

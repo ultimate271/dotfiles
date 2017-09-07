@@ -23,7 +23,6 @@ function! NextNonBlankLine(lnum)
         endif
         let current += 1
     endwhile
-    
     return -2
 endfunction
 
@@ -49,10 +48,10 @@ endfunction
 
 
 "Function that makes folded text look better
-function! MyFoldText()
+function! MyFoldText() "                                              oeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
     let numlines = v:foldend - v:foldstart + 1
     let foldtext = v:folddashes." [FOLDED] ".numlines." lines ".v:folddashes."    "
-    let linetext = strpart(getline(v:foldstart), 0, &columns - strlen(foldtext))
-    let padding = repeat(" ", &columns - strlen(linetext) - strlen(foldtext))
+    let linetext = strpart(getline(v:foldstart), 0, min([80, &columns - strlen(foldtext)]))
+    let padding = repeat(" ", min([80, &columns - strlen(foldtext)]) - strlen(linetext))
     return "".linetext.padding.foldtext
 endfunction
