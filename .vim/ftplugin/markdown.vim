@@ -34,6 +34,6 @@ function! FoldTextMarkdown()
     if (getline(v:foldstart)[0] != '#' && fl < 3)
         let prefix = repeat("#", fl)
     endif
-    return "".prefix.MyFoldText()
+    return MyFoldText(prefix)
 endfunction
 
