@@ -20,6 +20,7 @@ Plugin 'wincent/scalpel'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'vim-scripts/folddigest.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'terryma/vim-smooth-scroll'
 "Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 filetype plugin indent on

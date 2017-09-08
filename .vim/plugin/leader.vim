@@ -79,6 +79,9 @@ set ignorecase
 set smartcase
 nnoremap <leader>n :noh<cr>
 
+"Smooth Scroll
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 12, 1)<cr>
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 12, 1)<cr>
 
 "Convienience mappings
 nnoremap H ^
