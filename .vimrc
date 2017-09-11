@@ -87,7 +87,7 @@ function! ToggleCC(collist)
 endfunction
 
 "Visually see 80 lines
-call ToggleCC(range(81,255))
+call ToggleCC(range(81,90))
 
 syntax enable
 if filereadable(expand("$VIMHOME/colors/bdubcolor.vim"))
