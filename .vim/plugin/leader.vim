@@ -41,6 +41,8 @@ nnoremap " '
 nnoremap ' "
 vnoremap " '
 vnoremap ' "
+nnoremap 0 ^
+nnoremap ^ 0
 
 "Very magic searching
 nnoremap / /\v
