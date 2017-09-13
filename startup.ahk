@@ -18,7 +18,7 @@ Backspace & ]::
 Return
 
 Backspace & [::
-	Send, {F2}{Tab 3}943520{Tab}52720{Enter}!i
+	Send, {F10}!p10282016{Tab 2}16000{Tab 2}00001!f
 Return
 
 +NumpadSub::_
