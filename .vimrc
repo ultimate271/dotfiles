@@ -22,6 +22,7 @@ Plugin 'vim-scripts/folddigest.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-smooth-scroll'
 Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'tpope/vim-projectionist'
 "Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 filetype plugin indent on
