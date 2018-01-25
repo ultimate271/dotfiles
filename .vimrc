@@ -1,4 +1,5 @@
 set encoding=utf-8
+set fileencoding=utf-8
 
 "Define where the vim bundles are for plugins
 if has('win32')
@@ -14,13 +15,12 @@ set rtp+=$VIMHOME/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-vinegar'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'godlygeek/tabular'
-Plugin 'wincent/scalpel'
-Plugin 'haya14busa/incsearch.vim'
+"Plugin 'wincent/scalpel'
+"Plugin 'haya14busa/incsearch.vim'
 Plugin 'vim-scripts/folddigest.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'terryma/vim-smooth-scroll'
+"Plugin 'scrooloose/nerdtree'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'tpope/vim-projectionist'
 "Plugin 'Valloric/YouCompleteMe'
@@ -60,6 +60,7 @@ set copyindent
 set autoindent
 set list
 set listchars=trail:◆
+set virtualedit=block
 
 "What to toggle to see whitespace
 function! ToggleListChars()
