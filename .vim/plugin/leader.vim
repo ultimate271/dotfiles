@@ -12,11 +12,6 @@ nnoremap <leader>eh :tabedit $VIMHOME/plugin/leader.vim<cr>
 nnoremap <leader>wh ZZ:source $VIMHOME/plugin/leader.vim<cr>
 nnoremap <silent> <leader>ww :w<cr>:source %<cr>
 
-"Viewing shortcuts
-nnoremap <leader>vw :set wrap!<cr>
-nnoremap <silent> <leader>vs :call ToggleListChars()<cr>
-nnoremap <silent> <leader>vc :call ToggleCC(range(81,255))<cr>
-nnoremap <silent> <leader>vl :call ToggleCC([1,5,9,13,17,21,25])<cr>
 
 "Blackhole Register
 nnoremap <leader>d "_d
@@ -35,14 +30,6 @@ inoremap === <esc>80i=<esc>A
 nnoremap <leader>f<space> :%s/	/    /g<cr>
 nnoremap <leader>p mr$p`r
 nnoremap <leader>P mrGp`r
-
-"Easily select registers in general
-nnoremap " '
-nnoremap ' "
-vnoremap " '
-vnoremap ' "
-nnoremap 0 ^
-nnoremap ^ 0
 
 "Very magic searching
 nnoremap / /\v
@@ -81,33 +68,9 @@ set ignorecase
 set smartcase
 nnoremap <leader>n :noh<cr>
 
-"Smooth Scroll
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 12, 1)<cr>
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 12, 1)<cr>
-
 "Convienience mappings
 nnoremap H ^
 nnoremap L $
 vnoremap J j
 vnoremap K k
 
-"Leader key pnumonics
-"Chords
-    "<leader>e = edit
-        "v = vimrc
-        "c = vimcolors
-    "<leader>w = write
-        "v = vimrc
-    "<leader>v = view
-        "w = word wrap
-        "s = whitespace
-        "c = 80 width column
-        "l = layout
-    "<leader>f = format
-        "<space> = replace all tabs with spaces
-"Key Presses
-    "<leader>h l = navigate buffers
-    "<leader>p P = special pasting hotkeys
-    "<leader>d = blackhole register
-    "<leader>s = invokes scalpel
-    "<leader>n = remove search highlighting
