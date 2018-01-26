@@ -23,7 +23,11 @@ set softtabstop=4
 set copyindent
 set autoindent
 
-set list
+set list                                "Show White Space
 set listchars=trail:◆
 set listchars+=tab:>-
-set virtualedit=block
+
+set virtualedit=block                   "ctrl-v selects block even if there are characters there
+
+
+

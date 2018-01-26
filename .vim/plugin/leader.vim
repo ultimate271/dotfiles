@@ -2,6 +2,9 @@
 let mapleader = '\'
 map <space> <leader>
 set timeoutlen=4000
+"Some changes
+"Some more changes
+
 
 "Easily edit vimrc
 nnoremap <leader>ev :tabedit $MYVIMRC<cr>
@@ -74,3 +77,11 @@ nnoremap L $
 vnoremap J j
 vnoremap K k
 
+"Close one buffer at a time
+command Q bdelete
+command WQ call WBDelete()
+
+function! WBDelete()
+    execute "w"
+    execute "bdelete"
+endfunction
