@@ -62,10 +62,6 @@ vmap <Leader>s <Plug>(ScalpelVisual)
 nnoremap <silent> <leader>n :noh<cr>
 
 "Incremntal Search
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-let g:incsearch#magic = '\v'
 set hlsearch
 set ignorecase
 set smartcase
