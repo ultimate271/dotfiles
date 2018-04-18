@@ -23,7 +23,8 @@ set softtabstop=4
 set copyindent
 set autoindent
 
-set list                                "Show White Space
+"Show White Space
+set list
 set listchars=trail:◆
 set listchars+=tab:>-
 

@@ -18,10 +18,12 @@ function! FoldExprMarkdown(lnum)
     let nline = getline(a:lnum + 1)
     if nline =~ '\v^\=+$' || cline =~ '\v^#[^#]+'
         return '>1'
-    elseif nline =~ '\v^-+$' || cline =~ '\v##[^#]+'
+    elseif nline =~ '\v^-+$' || cline =~ '\v^##[^#]+'
         return '>2'
-    elseif exists("g:foldparagraph") && strlen(pline) == 0 && strlen(cline) != 0
+    elseif cline =~ '\v^###[^#]+'
         return '>3'
+    "elseif exists("g:foldparagraph") && strlen(pline) == 0 && strlen(cline) != 0
+    "    return '>4'
     else
         return '='
     endif

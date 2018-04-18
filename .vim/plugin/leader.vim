@@ -65,7 +65,6 @@ nnoremap <silent> <leader>n :noh<cr>
 "map /  <Plug>(incsearch-forward)
 "map ?  <Plug>(incsearch-backward)
 "map g/ <Plug>(incsearch-stay)
-let g:incsearch#magic = '\v'
 set hlsearch
 set ignorecase
 set smartcase
