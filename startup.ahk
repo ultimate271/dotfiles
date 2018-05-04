@@ -13,13 +13,13 @@ Return
 RShift::Esc
 Return
 
-^j::
-    Send, ^c
-Return
-
-^k::
-    Send, ^v
-Return
+;^j::
+;    Send, ^c
+;Return
+;
+;^k::
+;    Send, ^v
+;Return
 
 Backspace & ]::
     Send, admin{Tab}Alliant{Enter}
