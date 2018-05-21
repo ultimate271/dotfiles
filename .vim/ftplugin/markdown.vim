@@ -22,6 +22,12 @@ function! FoldExprMarkdown(lnum)
         return '>2'
     elseif cline =~ '\v^###[^#]+'
         return '>3'
+    elseif cline =~ '\v^####[^#]+'
+        return '>4'
+    elseif cline =~ '\v^#####[^#]+'
+        return '>5'
+    elseif cline =~ '\v^######[^#]+'
+        return '>6'
     "elseif exists("g:foldparagraph") && strlen(pline) == 0 && strlen(cline) != 0
     "    return '>4'
     else
