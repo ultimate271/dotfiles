@@ -31,11 +31,11 @@ filetype plugin indent on
 let g:ctrlp_show_hidden = 1
 
 "Scrolling goodness (winheight(win_getid())-x)/2 where x is the 'wiggle room'
-augroup VCenterCursor
-    au!
-    au BufEnter,WinEnter,WinNew,VimResized *,*.* 
-        \ let &scrolloff=(winheight(win_getid())-12)/2
-augroup END
+"augroup VCenterCursor
+"    au!
+"    au BufEnter,WinEnter,WinNew,VimResized *,*.* 
+"        \ let &scrolloff=(winheight(win_getid())-12)/2
+"augroup END
 
 
 syntax enable

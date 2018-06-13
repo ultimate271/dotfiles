@@ -28,8 +28,6 @@ vnoremap <C-c> "*
 inoremap <C-c> <C-r>*
 
 "Insert Text
-inoremap --- <esc>80i-<esc>A
-inoremap === <esc>80i=<esc>A
 nnoremap <leader>f<space> :%s/	/    /g<cr>
 nnoremap <leader>p mr$p`r
 nnoremap <leader>P mrGp`r
@@ -49,8 +47,10 @@ nnoremap <leader>l :bprevious<cr>
 "Easy Pane Navigation
 set winminwidth=20
 nnoremap <silent> <C-h> :set nowrap<cr><C-w>h:vertical resize 88<cr>
-nnoremap <silent> <C-j> :set nowrap<cr><C-w>j:vertical resize 88<cr>
-nnoremap <silent> <C-k> :set nowrap<cr><C-w>k:vertical resize 88<cr>
+"nnoremap <silent> <C-j> :set nowrap<cr><C-w>j:vertical resize 88<cr>
+nnoremap <silent> <C-j> <C-e>
+"nnoremap <silent> <C-k> :set nowrap<cr><C-w>k:vertical resize 88<cr>
+nnoremap <silent> <C-k> <C-y>
 nnoremap <silent> <C-l> :set nowrap<cr><C-w>l:vertical resize 88<cr>
 
 "Tabulate shortcut
@@ -71,10 +71,10 @@ set smartcase
 nnoremap <leader>n :noh<cr>
 
 "Convienience mappings
-nnoremap H ^
-nnoremap L $
-vnoremap J j
-vnoremap K k
+"nnoremap H ^
+"nnoremap L $
+"vnoremap J j
+"vnoremap K k
 
 "Close one buffer at a time
 command Q bdelete
