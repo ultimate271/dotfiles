@@ -25,6 +25,7 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'tpope/vim-projectionist'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
 call vundle#end()
 filetype plugin indent on
 
