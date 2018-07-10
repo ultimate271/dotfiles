@@ -56,10 +56,18 @@ nnoremap <silent> <C-l> :set nowrap<cr><C-w>l:vertical resize 88<cr>
 "Tabulate shortcut
 vnoremap = :Tab /=<cr>
 
+"Literary Annotations
+nnoremap <silent> <leader>a mx"xyiw?^#<cr>o{Actor:<C-r>x}<esc>`x:noh<cr>
+vnoremap <silent> <leader>a mx"xy?^#<cr>o{Actor:<C-r>x}<esc>`x:noh<cr>
+nnoremap <silent> <leader>s mx"xyiw?^#<cr>o{Scene:<C-r>x}<esc>`x:noh<cr>
+vnoremap <silent> <leader>s mx"xy?^#<cr>o{Scene:<C-r>x}<esc>`x:noh<cr>
+nnoremap <silent> <leader>r mx"xyiw?^#<cr>o{Reference:<C-r>x}<esc>`x:noh<cr>
+vnoremap <silent> <leader>r mx"xy?^#<cr>o{Reference:<C-r>x}<esc>`x:noh<cr>
+
 "Scalpel Remap
-nmap <Leader>s <Plug>(Scalpel)
-vmap <Leader>s <Plug>(ScalpelVisual)
-nnoremap <silent> <leader>n :noh<cr>
+"nmap <Leader>s <Plug>(Scalpel)
+"vmap <Leader>s <Plug>(ScalpelVisual)
+"nnoremap <silent> <leader>n :noh<cr>
 
 "Incremntal Search
 "map /  <Plug>(incsearch-forward)
