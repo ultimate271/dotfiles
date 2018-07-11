@@ -5,6 +5,7 @@ nnoremap <silent> <leader>s mx"xyiw?^#<cr>o{Scene:<C-r>x}<esc>`x:noh<cr>
 vnoremap <silent> <leader>s mx"xy?^#<cr>o{Scene:<C-r>x}<esc>`x:noh<cr>
 nnoremap <silent> <leader>r mx"xyiw?^#<cr>o{Reference:<C-r>x}<esc>`x:noh<cr>
 vnoremap <silent> <leader>r mx"xy?^#<cr>o{Reference:<C-r>x}<esc>`x:noh<cr>
+nnoremap <silent> <leader>g "tyi{:tag <C-r>t<cr>
 
 function! TagHeaders()
     let i = 1
@@ -35,7 +36,7 @@ function! TagHeaders()
             endif
 
             "Build the idstring
-            let idstring = ''
+            let idstring = expand('%:t:r') . '.'
             for j in range(1, hlevel - 1)
                 let idstring = idstring . headerCount[j] . '.'
             endfor
@@ -44,7 +45,7 @@ function! TagHeaders()
             "build the newline based on the current one
             "let currenttag = matchstr(getline(i), '\v^#+.*\{\zs.*\ze\}')
             let newline = getline(i)
-            let newline = substitute(newline, '\v\{.*\}', '', 'g') "Remove any pre-existing tags
+            let newline = substitute(newline, '\v^(#+)\{[^\}]*\}', '\1', '') "Remove any pre-existing tags
             "let newline = substitute(getline(i), '\v(^#+ )(\{.*\})?.*(\}.*)', '\1' . idstring . '\2', '')
             let newline = substitute(newline, '\v(^#+)(.*)', '\1{' . idstring . '}\2', '')
 
