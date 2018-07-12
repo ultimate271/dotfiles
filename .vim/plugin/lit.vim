@@ -62,15 +62,15 @@ function! TagHeaders()
             call setline(i, newline)
 
             "Update the tags file and the reference file
+            let santag = SanitizeTag(currenttag)
             if currenttag != ""
-                let santag = SanitizeTag(currenttag)
-                echo currenttag
-                echo santag
-                echo newtag
-                echo tagfile
                 call SubInList(reffile, '\v\{' . santag . '\}', '{ ' . newtag . ' }', 'g') "Use spaces on the replacement to guard them
                 call SubInList(tagfile, '\v\{' . santag . '\}', '{ ' . newtag . ' }', 'g') "Replace the regex in the tags file
                 call SubInList(tagfile, '\v^' . santag . '	', ' ' . newtag . '	', '') "And the actual tag itself
+            else
+                "Build the new tag line
+                let tagline = ' ' . newtag . '	' . expand('%:t') . '	' . '/^#\+{ ' . newtag . ' }'
+                call add(tagfile, tagline)
             endif
         endif
     endfor
@@ -79,6 +79,54 @@ function! TagHeaders()
     call SubInList(reffile, '\v\{ ([^ \}]*) \}', '{\1}', 'g')
     call SubInList(tagfile, '\v\{ ([^ \}]*) \}', '{\1}', 'g')
     call SubInList(tagfile, '\v^ ([^	]*	)', '\1', 'g')
+
+    "Delete any tags that used to be in this particular file that are not anymore
+    for i in reverse(range(0, len(tagfile) - 1))
+        let thistagfilename = matchstr(tagfile[i], '\v[^	]*	\zs[^	]*\ze	')
+        if thistagfilename ==? expand('%:t')
+            let currenttag = matchstr(tagfile[i], '\v^\zs[^	]*\ze	')
+            let pattern = '\v^#+\{' . SanitizeTag(currenttag) . '\}'
+            let deleteline = 1
+            for j in range(1, numLines)
+                if getline(j) =~? pattern
+                    let deleteline = 0
+                    break
+                endif
+            endfor
+            if deleteline
+                call remove(tagfile, i)
+            endif
+        endif
+    endfor
+
+    "Delete any duplicate tags (and I'm lazy so it's quadratic running time and it looks gross
+    let i = 0
+    let length = len(tagfile) - 1
+    while i < length
+        let currenttagfilename = matchstr(tagfile[i], '\v[^	]*	\zs[^	]*\ze	')
+        if currenttagfilename ==? expand('%:t')
+            let currenttag = matchstr(tagfile[i], '\v^\zs[^	]*\ze	')
+            let j = i + 1
+            while j < length
+                let comparetagfilename = matchstr(tagfile[j], '\v[^	]*	\zs[^	]*\ze	')
+                if comparetagfilename ==? expand('%:t')
+                    let comparetag = matchstr(tagfile[j], '\v^\zs[^	]*\ze	')
+                    if comparetag ==? currenttag
+                        echo 'i ' . i
+                        echo 'j ' . j
+                        echo 'itag' . currenttag
+                        echo 'jtag' . comparetag
+                        call remove(tagfile, j)
+                        let length = len(tagfile) - 1
+                        let j = j - 1
+                    endif
+                endif
+                let j = j + 1
+            endwhile
+        endif
+        let i = i + 1
+    endwhile
+
     call writefile(reffile, reffilename)
     call writefile(tagfile, tagfilename)
 endfunction
