@@ -5,7 +5,7 @@ nnoremap <silent> <leader>s mx"xyiw?^#<cr>o{Scene:<C-r>x}<esc>`x:noh<cr>
 vnoremap <silent> <leader>s mx"xy?^#<cr>o{Scene:<C-r>x}<esc>`x:noh<cr>
 nnoremap <silent> <leader>r mx"xyiw?^#<cr>o{Reference:<C-r>x}<esc>`x:noh<cr>
 vnoremap <silent> <leader>r mx"xy?^#<cr>o{Reference:<C-r>x}<esc>`x:noh<cr>
-nnoremap <silent> <leader>g "tyi{:tag <C-r>t<cr>
+nnoremap <silent> <leader>g "tyi<:tag <C-r>t<cr>
 
 function! TagHeaders()
     let i = 1
@@ -112,10 +112,6 @@ function! TagHeaders()
                 if comparetagfilename ==? expand('%:t')
                     let comparetag = matchstr(tagfile[j], '\v^\zs[^	]*\ze	')
                     if comparetag ==? currenttag
-                        echo 'i ' . i
-                        echo 'j ' . j
-                        echo 'itag' . currenttag
-                        echo 'jtag' . comparetag
                         call remove(tagfile, j)
                         let length = len(tagfile) - 1
                         let j = j - 1
