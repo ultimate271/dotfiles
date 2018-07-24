@@ -1,11 +1,15 @@
 "Literary Annotations
-nnoremap <silent> <leader>a mx"xyiw?^#<cr>o{Actor:<C-r>x}<esc>`x:noh<cr>
-vnoremap <silent> <leader>a mx"xy?^#<cr>o{Actor:<C-r>x}<esc>`x:noh<cr>
-nnoremap <silent> <leader>s mx"xyiw?^#<cr>o{Scene:<C-r>x}<esc>`x:noh<cr>
-vnoremap <silent> <leader>s mx"xy?^#<cr>o{Scene:<C-r>x}<esc>`x:noh<cr>
-nnoremap <silent> <leader>r mx"xyiw?^#<cr>o{Reference:<C-r>x}<esc>`x:noh<cr>
-vnoremap <silent> <leader>r mx"xy?^#<cr>o{Reference:<C-r>x}<esc>`x:noh<cr>
-nnoremap <silent> <leader>g "tyi<:tag <C-r>t<cr>
+nnoremap <silent> <leader>a mx"xyiw?^# <cr>o[Actor]: # {<C-r>x}<esc>`x:noh<cr>
+vnoremap <silent> <leader>a mx"xy?^# <cr>o[Actor]: # {<C-r>x}<esc>`x:noh<cr>
+nnoremap <silent> <leader>p mx"xyiw?^# <cr>o[Place]: # {<C-r>x}<esc>`x:noh<cr>
+vnoremap <silent> <leader>p mx"xy?^# <cr>o[Place]: # {<C-r>x}<esc>`x:noh<cr>
+nnoremap <silent> <leader>s mx"xyiw?^#<cr>o[Speaker]: # {<C-r>x}<esc>`x:noh<cr>
+vnoremap <silent> <leader>s mx"xy?^#<cr>o[Speaker]: # {<C-r>x}<esc>`x:noh<cr>
+nnoremap <silent> <leader>o mx"xyiw?^#<cr>o[Object]: # {<C-r>x}<esc>`x:noh<cr>
+vnoremap <silent> <leader>o mx"xy?^#<cr>o[Object]: # {<C-r>x}<esc>`x:noh<cr>
+nnoremap <silent> <leader>r mx"xyiw?^#<cr>o[Reference]: # {<C-r>x}<esc>`x:noh<cr>
+vnoremap <silent> <leader>r mx"xy?^#<cr>o[Reference]: # {<C-r>x}<esc>`x:noh<cr>
+nnoremap <silent> <leader>g "tyi{:tag <C-r>t<cr>
 
 function! TagHeaders()
     let i = 1
