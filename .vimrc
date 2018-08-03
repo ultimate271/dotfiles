@@ -26,6 +26,8 @@ Plugin 'tpope/vim-projectionist'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'junegunn/limelight.vim'
+Plugin 'junegunn/goyo.vim'
 call vundle#end()
 filetype plugin indent on
 
