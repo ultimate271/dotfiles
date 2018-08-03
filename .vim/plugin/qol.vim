@@ -30,5 +30,6 @@ set listchars+=tab:>-
 
 set virtualedit=block                   "ctrl-v selects block even if there are characters there
 
+let g:ctrlp_open_new_file = 'r'
 
 
