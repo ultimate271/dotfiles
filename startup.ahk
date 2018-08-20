@@ -10,8 +10,8 @@ Return
 Backspace::
 Return
 
-RShift::Esc
-Return
+;RShift::Esc 
+;Return
 
 ;^j::
 ;    Send, ^c

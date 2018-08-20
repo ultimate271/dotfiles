@@ -1,0 +1,2 @@
+vnoremap = :Tab /=<cr>
+
