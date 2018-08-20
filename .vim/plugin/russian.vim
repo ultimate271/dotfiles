@@ -30,4 +30,3 @@ nnoremap т b
 nnoremap ь m
 nnoremap б w
 nnoremap ю v
-nnoremap . z
