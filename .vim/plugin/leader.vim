@@ -5,7 +5,6 @@ set timeoutlen=4000
 "Some changes
 "Some more changes
 
-
 "Easily edit vimrc
 nnoremap <leader>ev :tabedit $MYVIMRC<cr>
 nnoremap <leader>wv ZZ:source $MYVIMRC<cr>
@@ -14,27 +13,6 @@ nnoremap <leader>wc ZZ:source $MYVIMRC<cr>
 nnoremap <leader>eh :tabedit $VIMHOME/plugin/leader.vim<cr>
 nnoremap <leader>wh ZZ:source $VIMHOME/plugin/leader.vim<cr>
 nnoremap <silent> <leader>ww :w<cr>:source %<cr>
-
-
-"Blackhole Register
-nnoremap <leader>d "_d
-vnoremap <leader>d "_d
-nnoremap c "_c
-vnoremap c "_c
-
-"Easily select clipboard register
-nnoremap <C-c> "*
-vnoremap <C-c> "*
-inoremap <C-c> <C-r>*
-
-"Insert Text
-nnoremap <leader>f<space> :%s/	/    /g<cr>
-nnoremap <leader>p mr$p`r
-nnoremap <leader>P mrGp`r
-
-"Very magic searching
-"nnoremap / /\v
-"vnoremap / /\v
 
 "Tab Creation and Switching
 nnoremap gh gT
@@ -53,9 +31,6 @@ nnoremap <silent> <C-j> j<C-e>
 nnoremap <silent> <C-k> k<C-y>
 nnoremap <silent> <C-l> :set nowrap<cr><C-w>l:vertical resize 88<cr>
 
-"Tabulate shortcut
-vnoremap = :Tab /=<cr>
-
 "Scalpel Remap
 "nmap <Leader>s <Plug>(Scalpel)
 "vmap <Leader>s <Plug>(ScalpelVisual)
@@ -68,7 +43,6 @@ vnoremap = :Tab /=<cr>
 set hlsearch
 set ignorecase
 set smartcase
-nnoremap <leader>n :noh<cr>
 
 "Convienience mappings
 "nnoremap H ^
