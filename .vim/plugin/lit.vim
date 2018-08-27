@@ -1,12 +1,12 @@
 "Literary Annotations
-nnoremap <silent> <leader>a mx"xyiw?^# <cr>o[Actor]: # {<C-r>x}<esc>`x:noh<cr>
-vnoremap <silent> <leader>a mx"xy?^# <cr>o[Actor]: # {<C-r>x}<esc>`x:noh<cr>
+nnoremap <silent> <leader>a mx"xyiw?^#<cr>o[Actor]: # {<C-r>x}<esc>`x:noh<cr>
+vnoremap <silent> <leader>a mx"xy?^#<cr>o[Actor]: # {<C-r>x}<esc>`x:noh<cr>
 nnoremap <silent> <leader>s mx"xyiw?^#<cr>o[Speaker]: # {<C-r>x}<esc>`x:noh<cr>
 vnoremap <silent> <leader>s mx"xy?^#<cr>o[Speaker]: # {<C-r>x}<esc>`x:noh<cr>
 nnoremap <silent> <leader>c mx"xyiw?^#<cr>o[Character]: # {<C-r>x}<esc>`x:noh<cr>
 vnoremap <silent> <leader>c mx"xy?^#<cr>o[Character]: # {<C-r>x}<esc>`x:noh<cr>
-nnoremap <silent> <leader>l mx"xyiw?^# <cr>o[Location]: # {<C-r>x}<esc>`x:noh<cr>
-vnoremap <silent> <leader>l mx"xy?^# <cr>o[Location]: # {<C-r>x}<esc>`x:noh<cr>
+nnoremap <silent> <leader>l mx"xyiw?^#<cr>o[Location]: # {<C-r>x}<esc>`x:noh<cr>
+vnoremap <silent> <leader>l mx"xy?^#<cr>o[Location]: # {<C-r>x}<esc>`x:noh<cr>
 nnoremap <silent> <leader>p mx"xyiw?^#<cr>o[Place]: # {<C-r>x}<esc>`x:noh<cr>
 vnoremap <silent> <leader>p mx"xy?^#<cr>o[Place]: # {<C-r>x}<esc>`x:noh<cr>
 nnoremap <silent> <leader>o mx"xyiw?^#<cr>o[Object]: # {<C-r>x}<esc>`x:noh<cr>
@@ -18,9 +18,10 @@ vnoremap <silent> <leader>e mx"xy?^#<cr>o[Event]: # {<C-r>x}<esc>`x:noh<cr>
 nnoremap <silent> <leader>m mx"xyiw?^#<cr>o[Myth]: # {<C-r>x}<esc>`x:noh<cr>
 vnoremap <silent> <leader>m mx"xy?^#<cr>o[Myth]: # {<C-r>x}<esc>`x:noh<cr>
 nnoremap <silent> <leader>g "tyi{:tag <C-r>t<cr>
-nnoremap <silent> <leader>1 mx{o# <esc>`x
-nnoremap <silent> <leader>2 mx{o## <esc>`x
-nnoremap <silent> <leader>3 mx{o### <esc>`x
+vnoremap <silent> <leader>g "ty:tag <C-r>t<cr>
+nnoremap <silent> <leader>1 mx?\v(^$\|^#)<cr>:noh<cr>o# <esc>`x
+nnoremap <silent> <leader>2 mx?\v(^$\|^#)<cr>:noh<cr>o## <esc>`x
+nnoremap <silent> <leader>3 mx?\v(^$\|^#)<cr>:noh<cr>o### <esc>`x
 nnoremap <silent> <up> ?^#<cr>zt
 
 function! TagHeaders()
