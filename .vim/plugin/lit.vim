@@ -1,30 +1,27 @@
 "Literary Annotations
-nnoremap <silent> <leader>a mx"xyiw?^#<cr>o[Actor]: # {<C-r>x}<esc>`x:noh<cr>
-vnoremap <silent> <leader>a mx"xy?^#<cr>o[Actor]: # {<C-r>x}<esc>`x:noh<cr>
-nnoremap <silent> <leader>s mx"xyiw?^#<cr>o[Speaker]: # {<C-r>x}<esc>`x:noh<cr>
-vnoremap <silent> <leader>s mx"xy?^#<cr>o[Speaker]: # {<C-r>x}<esc>`x:noh<cr>
-nnoremap <silent> <leader>c mx"xyiw?^#<cr>o[Character]: # {<C-r>x}<esc>`x:noh<cr>
-vnoremap <silent> <leader>c mx"xy?^#<cr>o[Character]: # {<C-r>x}<esc>`x:noh<cr>
-nnoremap <silent> <leader>l mx"xyiw?^#<cr>o[Location]: # {<C-r>x}<esc>`x:noh<cr>
-vnoremap <silent> <leader>l mx"xy?^#<cr>o[Location]: # {<C-r>x}<esc>`x:noh<cr>
-nnoremap <silent> <leader>p mx"xyiw?^#<cr>o[Place]: # {<C-r>x}<esc>`x:noh<cr>
-vnoremap <silent> <leader>p mx"xy?^#<cr>o[Place]: # {<C-r>x}<esc>`x:noh<cr>
-nnoremap <silent> <leader>o mx"xyiw?^#<cr>o[Object]: # {<C-r>x}<esc>`x:noh<cr>
-vnoremap <silent> <leader>o mx"xy?^#<cr>o[Object]: # {<C-r>x}<esc>`x:noh<cr>
-nnoremap <silent> <leader>i mx"xyiw?^#<cr>o[Item]: # {<C-r>x}<esc>`x:noh<cr>
-vnoremap <silent> <leader>i mx"xy?^#<cr>o[Item]: # {<C-r>x}<esc>`x:noh<cr>
-nnoremap <silent> <leader>e mx"xyiw?^#<cr>o[Event]: # {<C-r>x}<esc>`x:noh<cr>
-vnoremap <silent> <leader>e mx"xy?^#<cr>o[Event]: # {<C-r>x}<esc>`x:noh<cr>
-nnoremap <silent> <leader>m mx"xyiw?^#<cr>o[Myth]: # {<C-r>x}<esc>`x:noh<cr>
-vnoremap <silent> <leader>m mx"xy?^#<cr>o[Myth]: # {<C-r>x}<esc>`x:noh<cr>
-nnoremap <silent> <leader>r mx"xyiw?^#<cr>o[Reference]: # {<C-r>x}<esc>`x:noh<cr>
-vnoremap <silent> <leader>r mx"xy?^#<cr>o[Reference]: # {<C-r>x}<esc>`x:noh<cr>
-nnoremap <silent> <leader>g "tyi{:tag <C-r>t<cr>
-vnoremap <silent> <leader>g "ty:tag <C-r>t<cr>
+nnoremap <silent> <leader>pg "tyi{:tag <C-r>t<cr>
+vnoremap <silent> <leader>pg "ty:tag <C-r>t<cr>
 nnoremap <silent> <leader>1 mx?\v(^$\|^#)<cr>:noh<cr>o# <esc>`x
 nnoremap <silent> <leader>2 mx?\v(^$\|^#)<cr>:noh<cr>o## <esc>`x
 nnoremap <silent> <leader>3 mx?\v(^$\|^#)<cr>:noh<cr>o### <esc>`x
 nnoremap <silent> <up> ?^#<cr>zt
+
+function! CreateMacro(name, tag)
+    execute 'nnoremap <silent> <leader>p' . a:tag . ' mx"xyiw?^#<cr>o[' . a:name . ']: # {<C-r>x}<esc>`x:noh<cr>'
+    execute 'vnoremap <silent> <leader>p' . a:tag . ' mx"xy?^#<cr>o[' . a:name . ']: # {<C-r>x}<esc>`x:noh<cr>'
+    execute 'nnoremap <silent> <leader>c' . a:tag . ' ?^#<cr>zto[' . a:name . ']: # {}<esc>i<C-x><C-]>'
+endfunction
+
+call CreateMacro('Actor', 'a')
+call CreateMacro('Speaker', 's')
+call CreateMacro('Character', 'c')
+call CreateMacro('Location', 'l')
+call CreateMacro('Place', 'p')
+call CreateMacro('Myth', 'm')
+call CreateMacro('Event', 'e')
+call CreateMacro('Item', 'i')
+call CreateMacro('Object', 'o')
+call CreateMacro('Reference', 'r')
 
 function! TagHeaders()
     let i = 1
