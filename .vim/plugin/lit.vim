@@ -17,6 +17,8 @@ nnoremap <silent> <leader>e mx"xyiw?^#<cr>o[Event]: # {<C-r>x}<esc>`x:noh<cr>
 vnoremap <silent> <leader>e mx"xy?^#<cr>o[Event]: # {<C-r>x}<esc>`x:noh<cr>
 nnoremap <silent> <leader>m mx"xyiw?^#<cr>o[Myth]: # {<C-r>x}<esc>`x:noh<cr>
 vnoremap <silent> <leader>m mx"xy?^#<cr>o[Myth]: # {<C-r>x}<esc>`x:noh<cr>
+nnoremap <silent> <leader>r mx"xyiw?^#<cr>o[Reference]: # {<C-r>x}<esc>`x:noh<cr>
+vnoremap <silent> <leader>r mx"xy?^#<cr>o[Reference]: # {<C-r>x}<esc>`x:noh<cr>
 nnoremap <silent> <leader>g "tyi{:tag <C-r>t<cr>
 vnoremap <silent> <leader>g "ty:tag <C-r>t<cr>
 nnoremap <silent> <leader>1 mx?\v(^$\|^#)<cr>:noh<cr>o# <esc>`x
