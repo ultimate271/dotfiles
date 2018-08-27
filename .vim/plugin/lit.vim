@@ -1,3 +1,4 @@
+set iskeyword=@,_
 "Literary Annotations
 nnoremap <silent> <leader>pg "tyi{:tag <C-r>t<cr>
 vnoremap <silent> <leader>pg "ty:tag <C-r>t<cr>
