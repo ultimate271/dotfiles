@@ -1,7 +1,7 @@
 set iskeyword=@,_
 "Literary Annotations
-nnoremap <silent> <leader>pg "tyi{:tag <C-r>t<cr>
-vnoremap <silent> <leader>pg "ty:tag <C-r>t<cr>
+nnoremap <silent> <leader>g "tyi{:tag <C-r>t<cr>
+vnoremap <silent> <leader>g "ty:tag <C-r>t<cr>
 nnoremap <silent> <leader>1 mx?\v(^$\|^#)<cr>:noh<cr>o# <esc>`x
 nnoremap <silent> <leader>2 mx?\v(^$\|^#)<cr>:noh<cr>o## <esc>`x
 nnoremap <silent> <leader>3 mx?\v(^$\|^#)<cr>:noh<cr>o### <esc>`x
