@@ -2,8 +2,9 @@ command Pandoc call DoPandoc()
 
 function! DoPandoc()
     wa
-    let yamlFilename = "metadata.yaml"
-    if filereadable(yamlFilename)
+    if filereadable("pandoc.bat")
+        ! .\pandoc.bat
+    elseif filereadable("metadata.yaml")
         ! pandoc -o"out.pdf" "%" "metadata.yaml"
     else
         ! pandoc -o"out.pdf" "%"
