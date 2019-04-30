@@ -2,5 +2,5 @@ command Pandoc call DoPandoc()
 
 function! DoPandoc()
     wa
-    ! pandoc -o"out.pdf" %
+    ! pandoc -o"out.pdf" "%"
 endfunction
