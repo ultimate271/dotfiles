@@ -5,7 +5,6 @@ command Cd call DoCd()
 let g:PandocCompile=1
 autocmd TextChanged * :let g:PandocCompile=1
 autocmd TextChangedI * :let g:PandocCompile=1
-autocmd TextChangedP * :let g:PandocCompile=1
 
 function! DoPandocCommand()
     if has('nvim')
