@@ -5,7 +5,6 @@ command Cd call DoCd()
 let g:PandocCompile=1
 autocmd TextChanged * :let g:PandocCompile=1
 autocmd TextChangedI * :let g:PandocCompile=1
-autocmd TextChangedP * :let g:PandocCompile=1
 
 function! DoPandocCommand()
     if has('nvim')
@@ -39,6 +38,8 @@ function! DoPandocAsync()
     if expand('%:t') == 'pandoc.bat'
         call DoCd()
         let l:command = 'pandoc.bat'
+    elseif filereadable("pandoc.bat")
+        let l:command = 'pandoc.bat'
     elseif filereadable("metadata.yaml")
         let l:command = 'pandoc -o"out.pdf" "'.expand("%:t").'" "metadata.yaml"'
     else
@@ -50,7 +51,6 @@ function! DoPandocAsync()
 endfunction
 
 function DoRead()
-    call DoCd()
     if (g:PandocCompile)
         call DoPandocAsync()
     else
