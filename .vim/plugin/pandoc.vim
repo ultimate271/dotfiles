@@ -44,6 +44,8 @@ function! DoPandocAsync()
     if expand('%:t') == 'pandoc.bat'
         call DoCd()
         let l:command = 'pandoc.bat'
+    elseif filereadable("pandoc.bat")
+        let l:command = 'pandoc.bat'
     elseif filereadable("metadata.yaml")
         let l:command = 'pandoc -o"out.pdf" "'.expand("%:t").'" "metadata.yaml"'
     else
@@ -55,7 +57,6 @@ function! DoPandocAsync()
 endfunction
 
 function DoRead()
-    call DoCd()
     if (g:PandocCompile)
         call DoPandocAsync()
     else
