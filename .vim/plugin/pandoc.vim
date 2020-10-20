@@ -1,3 +1,4 @@
+command Pdf call DoPdfCommand()
 command Pandoc call DoPandocCommand()
 command Read call DoRead()
 command Cd call DoCd()
@@ -5,6 +6,11 @@ command Cd call DoCd()
 let g:PandocCompile=1
 autocmd TextChanged * :let g:PandocCompile=1
 autocmd TextChangedI * :let g:PandocCompile=1
+
+function! DoPdfCommand()
+    wa
+    ! pdflatex "%"
+endfunction
 
 function! DoPandocCommand()
     if has('nvim')
